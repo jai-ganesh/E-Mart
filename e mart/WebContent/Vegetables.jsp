@@ -37,33 +37,60 @@ li {
   <li><a href="Vegetables.jsp">Vegetables</a></li>
   <li><a href="Contact.jsp">Contact Us</a></li>
   <li><a href="Cart.jsp">Cart</a></li>
-<li><a href="Login.jsp">Login</a></li> 
+<li><a href="Login.jsp">Login</a></li>
+<li><a>Welcome ${sessionScope.username}</a></li>  
     </ul>
   </div>
 </nav>
-<table cellpadding="50" align="left" >
-  <tr>
-  <td></td>
-    <td><img alt="f1" src="onion.png" height="150px" width="150px"><form>
-       <select name="items">
-    <option value="1/2kg">500g-40Rs</option>
-    <option value="1kg">1kg-78Rs</option>
-  </select>
-  <input type="button" value="Add">
-</form> </td>
-    <td><img alt="f2" src="tomato.png" height="150px" width="150px"><form>
-      <div class="box">35</div>
-  <input type="checkbox" value="Add">
-       <input type="text" id="tomato" style="width: 55px" placeholder="KGS">
-  
-</form></td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-  </tr>
+<center>
+		<button type="button" class="btn btn-primary">Add to Cart</button>
+	</center>
 
-  
-</table>
+	<table class="table table-hover">
+		<tbody>
+			<tr>
+				<td></td>
+
+				<td><a href="LoginServlet" method="post"><img src="onion.png" class="img-rounded" alt="Cinque Terre"
+					title="Onion" width="100" height="100"></a>
+					<form>
+
+						<div class="panel panel-default">
+							<div class="panel-heading">&#8377; 30/-</div>
+							<div class="panel-body" style="max-height: 10;">
+								<div class="checkbox">
+									<label><input type="checkbox" value="">Onion</label>
+								</div>
+								<input type="text" class="form-control" name="kgs"
+									placeholder="kgs">
+					</form></td>
+				<td></td>
+				<td><a href="LoginServlet" method="post"><img src="tomato.png" class="img-rounded"
+					alt="Cinque Terre" title="Tomato" width="100" height="100"></a>
+					<form>
+
+						<div class="panel panel-default">
+							<div class="panel-heading">&#8377; 40/-</div>
+							<div class="panel-body" style="max-height: 10;">
+								<div class="checkbox">
+									<label><input type="checkbox" value="">Tomato</label>
+								</div>
+								<input type="text" class="form-control" name="kgs"
+									placeholder="kgs">
+					</form></td>
+				</div>
+				</div>
+			</tr>
+			<tr></tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+
+
+		</tbody>
+	</table>
 
 </body>
 </html>

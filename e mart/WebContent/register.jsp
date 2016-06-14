@@ -11,11 +11,7 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <style>
 
-html {
-	background: url(Lemon.jpg) no-repeat center center fixed;
-	background-size: cover;
-	
-}
+
 
 li {
     float: left;
@@ -36,56 +32,40 @@ li {
   <li><a href="Contact.jsp">Contact Us</a></li>
   <li><a href="Cart.jsp">Cart</a></li>
 <li><a href="Login.jsp">Login</a></li> 
+<li><a>Welcome ${sessionScope.username}</a></li> 
     </ul>
   </div>
 </nav>
 <div align="center">
 	
-		<form action="Fruits.jsp">
-			<table>
-			<tr><td><h1>For New User</h1></td></tr>
-			<tr>
-			<div>
-				<td>NAME: </td>
-				<td><input type="text" placeholder="HENRY" required="" id="username" />
-	</td></div>
-			<tr><div>
-				<td>E-mail ID:</td>
-				<td><input type="text" placeholder="xxx@yyy.com" required="" id="email" />
-			</td></div>
-			</tr>
-			<tr>
-			<div>
-				<td>Gender </td><td><input type="radio" name="gender" value="male" checked> Male
-				<input type="radio" name="gender" value="male" checked> Female
-			</td></div></tr>
-				<td>Password:</td><td><input type="password" placeholder="Enter Password" required="" id="password" />
-			</td></div>
-			</tr>
-			<tr>
-			<div>
-				<td>Conform Password:</td><td><input type="password" placeholder="Re-Enter Password" required="" id="password" />
-			</td></div>
-			</tr>
-			<tr>
-			<div>
-				<td>Enter Address:</td><td><textarea rows="4" cols="16" required="" id="address" />
-		</textarea>	</td></div></tr>
-			<tr>
-			<div>
-				<td>Mobile No: </td><td><input type="text" placeholder="Enter 10 Digit mobile no" required="" id="cell no" />
-			</td></div></tr>
-			<tr><td></td></tr>
-			<tr>
-			<div>
-			<td></td>
-			<td>
-			<input type="submit" value="Register">
-				
-				<input type="reset" value="Clear"></td>
-			</div></tr>
-	
-	</table>	</form>
+		<form action="Home.jsp">
+		 <form role="form">
+    
+     <div class="col-xs-4">
+      <label for="username">User Name</label>
+      <input type="text" class="form-control" name="username" required="">
+      <label for="email">E-mail</label>
+      <input type="email" class="form-control" name="email" required="">
+          <label for="password">PASSWORD</label>
+      <input type="password" class="form-control" name="password" required="">
+      <label for="password">Re-Enter Password</label>
+      <input type="password" class="form-control" name="password" required="">
+      <label for="number">Contact No.</label>
+      <input type="number" class="form-control" name="number" required="">
+      <label for="address">Address Door no/Street:</label>
+      <input type="text" class="form-control input" name="address" required="">
+          <label for="area">Area:</label>
+      <input type="text" class="form-control input" name="area" required="">
+      <label for="city">City:</label>
+     <input type="text" class="form-control input" name="city" required="">
+         <label for="pincode">Pincode:</label>
+      <input type="text" class="form-control input" name="pincode" required="">
+    <br><button type="submit" class="btn btn-success">Register</button>
+    
+      <button type="reset" class="btn btn-success">Clear</button></div>
+      
+  </form>
+				</form>
 		
 	
 </div>

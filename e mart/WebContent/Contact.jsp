@@ -26,7 +26,7 @@ size: 200px;
 <title>Contact Us</title>
 </head>
 <body>
-	<div class="container">
+	
 <div id="example1">
 
 
@@ -41,6 +41,7 @@ size: 200px;
   <li><a href="Contact.jsp">Contact Us</a></li>
   <li><a href="Cart.jsp">Cart</a></li>
 <li><a href="Login.jsp">Login</a></li> 
+<li><a>Welcome ${sessionScope.username}</a></li> 
     </ul>
   </div>
 </nav>
@@ -49,7 +50,7 @@ size: 200px;
 </div>
 <br><br>
 <br>
-
+<div class="container">
 	
   <div class="jumbotron">
   <img src="Contact.png" alt="contact img" style="width:150px;height:100px;">

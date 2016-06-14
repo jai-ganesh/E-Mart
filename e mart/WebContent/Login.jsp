@@ -22,6 +22,7 @@ li {
 <title>Login</title>
 </head>
 <body>
+<center>
 
 	<nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -34,29 +35,28 @@ li {
   <li><a href="Contact.jsp">Contact Us</a></li>
   <li><a href="Cart.jsp">Cart</a></li>
 <li><a href="Login.jsp">Login</a></li> 
+<li><a>Welcome ${sessionScope.username}</a></li> 
     </ul>
   </div>
 </nav>
-<div class="html">
-</div>
 
-	<center>
-	<div>
+
+	
 
 		<form action="LoginServlet" method="post">
-			<h1>Login</h1>
-			 <form role="form">
-    
-     <div class="col-xs-4">
+			<h1>Login</h1> 
+			<center>
+      <div class="col-xs-4">
       <label for="username">USERNAME:</label>
       <input type="text" class="form-control" name="username" required="">
           <label for="password">PASSWORD:</label>
       <input type="password" class="form-control" name="password" required="">
-    <br><button type="submit" class="btn btn-success">Success</button>
-      <button type="reset" class="btn btn-success">Clear</button></div>
-  </form>
+    <br><button type="submit" class="btn btn-success">Login</button>
+      <button type="reset" class="btn btn-success">Clear</button>
+      <br><br><a href="register.jsp" type="button" class="btn btn-link" >Register Here</a></div>
+  </center>
 		</form>	
-	</div>
+
 	</center>
 </body>
 </html>
