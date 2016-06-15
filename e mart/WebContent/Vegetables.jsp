@@ -31,7 +31,7 @@ li {
   <div class="container-fluid">
     
     </div>
-    <ul class="nav navbar-nav">
+   <b> <ul class="nav nav-pills nav-justified">
       <li><a href="Home.jsp">Home</a></li>
   <li><a href="Fruits.jsp">Fruits</a></li>
   <li><a href="Vegetables.jsp">Vegetables</a></li>
@@ -39,7 +39,7 @@ li {
   <li><a href="Cart.jsp">Cart</a></li>
 <li><a href="Login.jsp">Login</a></li>
 <li><a>Welcome ${sessionScope.username}</a></li>  
-    </ul>
+    </ul></b>
   </div>
 </nav>
 <center>
@@ -51,7 +51,7 @@ li {
 			<tr>
 				<td></td>
 
-				<td><a href="LoginServlet" method="post"><img src="onion.png" class="img-rounded" alt="Cinque Terre"
+				<td><a href="ServletInfo?id=3" method="get"><img src="onion.png" class="img-rounded" alt="Cinque Terre"
 					title="Onion" width="100" height="100"></a>
 					<form>
 
@@ -65,7 +65,7 @@ li {
 									placeholder="kgs">
 					</form></td>
 				<td></td>
-				<td><a href="LoginServlet" method="post"><img src="tomato.png" class="img-rounded"
+				<td><a href="ServletInfo?id=4" method="get"><img src="tomato.png" class="img-rounded"
 					alt="Cinque Terre" title="Tomato" width="100" height="100"></a>
 					<form>
 

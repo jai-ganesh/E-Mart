@@ -17,27 +17,22 @@ li {
 	float: left;
 }
 
-.box {
-	float: left;
-	width: 25px;
-	height: 15px;
-	background-color: #FFFFFF;
-}
+
 </style>
 <title>Fruits</title>
 </head>
 <body>
 	<nav class="navbar navbar-inverse">
 	<div class="container-fluid"></div>
-	<ul class="nav navbar-nav">
+	<b><ul class="nav nav-pills nav-justified">
 		<li><a href="Home.jsp">Home</a></li>
 		<li><a href="Fruits.jsp">Fruits</a></li>
-		<li><a href="Vepostables.jsp">Vepostables</a></li>
+		<li><a href="Vegetables.jsp">Vegetables</a></li>
 		<li><a href="Contact.jsp">Contact Us</a></li>
 		<li><a href="Cart.jsp">Cart</a></li>
 		<li><a href="Login.jsp">Login</a></li>
 		<li><a>Welcome ${sessionScope.username}</a></li>
-	</ul>
+	</ul></b>
 	</div>
 	</nav>
 	<center>
@@ -49,8 +44,8 @@ li {
 			<tr>
 				<td></td>
 
-				<td><a href="LoginServlet" method="post"><img src="apple.png" class="img-rounded" alt="Cinque Terre"
-					title="Apple" width="100" height="100"></a>
+				<td><a href="ServletInfo?id=1" method="get"><img src="apple.png"  alt="Cinque Terre"
+					title="Apple" width="100" height="100" value="1"></a>
 					<form>
 
 						<div class="panel panel-default">
@@ -63,7 +58,7 @@ li {
 									placeholder="kgs">
 					</form></td>
 				<td></td>
-				<td><a href="LoginServlet" method="post"><img src="orange.png" class="img-rounded"
+				<td><a href="ServletInfo?id=2" method="get"><img src="orange.png" class="img-rounded"
 					alt="Cinque Terre" title="Orange" width="100" height="100"></a>
 					<form>
 

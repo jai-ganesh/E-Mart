@@ -35,13 +35,7 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		if(null == "buttonClicked")
-		  
-			else if("ButtonA".equals(buttonClicked))
-			  
-			else if("ButtonB".equals(buttonClicked))
-			  
-			else if("ButtonC".equals(buttonClicked))
+	
 
 	}
 	/**
@@ -61,7 +55,7 @@ public class LoginServlet extends HttpServlet {
 			request.getSession().setAttribute("username", username);
 			HttpSession session = request.getSession();
 			session.setAttribute("username", username);
-			String buttonClicked = request.getParameter("button_clicked");
+		
 			
 			  
 		} else {

@@ -27,7 +27,8 @@ li {
   <div class="container-fluid">
     
     </div>
-    <ul class="nav navbar-nav">
+    <b>
+    <ul class="nav nav-pills nav-justified">
       <li><a href="Home.jsp">Home</a></li>
   <li><a href="Fruits.jsp">Fruits</a></li>
   <li><a href="Vegetables.jsp">Vegetables</a></li>
@@ -36,7 +37,7 @@ li {
 <li><a href="Login.jsp">Login</a></li> 
 <li><a>Welcome ${sessionScope.username}</a></li> 
     </ul>
-  </div>
+  </b></div>
 </nav>
 <div align="center">
 
