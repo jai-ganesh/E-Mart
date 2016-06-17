@@ -16,8 +16,6 @@
 li {
 	float: left;
 }
-
-
 </style>
 <title>Fruits</title>
 </head>
@@ -25,27 +23,28 @@ li {
 	<nav class="navbar navbar-inverse">
 	<div class="container-fluid"></div>
 	<b><ul class="nav nav-pills nav-justified">
-		<li><a href="Home.jsp">Home</a></li>
-		<li><a href="Fruits.jsp">Fruits</a></li>
-		<li><a href="Vegetables.jsp">Vegetables</a></li>
-		<li><a href="Contact.jsp">Contact Us</a></li>
-		<li><a href="Cart.jsp">Cart</a></li>
-		<li><a href="Login.jsp">Login</a></li>
-		<li><a>Welcome ${sessionScope.username}</a></li>
-	</ul></b>
+			<li><a href="Home.jsp">Home</a></li>
+			<li><a href="Fruits.jsp">Fruits</a></li>
+			<li><a href="Vegetables.jsp">Vegetables</a></li>
+			<li><a href="Contact.jsp">Contact Us</a></li>
+			<li><a href="Cart.jsp">Cart</a></li>
+			<li><a href="Login.jsp">Login</a></li>
+			<li><a>Welcome ${sessionScope.username}</a></li>
+		</ul></b>
 	</div>
 	</nav>
 	<center>
 		<button type="button" class="btn btn-primary">Add to Cart</button>
 	</center>
 
-<table class="table table-hover">
+	<table class="table table-hover">
 		<tbody>
 			<tr>
 				<td></td>
 
-				<td><a href="ServletInfo?id=1" method="get"><img src="apple.png"  alt="Cinque Terre"
-					title="Apple" width="100" height="100" value="1"></a>
+				<td><a href="ServletInfo?id=1" method="get"><img
+						src="apple.png" alt="Cinque Terre" title="Apple" width="100"
+						height="100" value="1"></a>
 					<form>
 
 						<div class="panel panel-default">
@@ -58,8 +57,9 @@ li {
 									placeholder="kgs">
 					</form></td>
 				<td></td>
-				<td><a href="ServletInfo?id=2" method="get"><img src="orange.png" class="img-rounded"
-					alt="Cinque Terre" title="Orange" width="100" height="100"></a>
+				<td><a href="ServletInfo?id=2" method="get"><img
+						src="orange.png" class="img-rounded" alt="Cinque Terre"
+						title="Orange" width="100" height="100"></a>
 					<form>
 
 						<div class="panel panel-default">

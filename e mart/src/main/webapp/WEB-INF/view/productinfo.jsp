@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -18,12 +18,10 @@
 li {
 	float: left;
 }
-
-
 </style>
 </head>
 <body>
-<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-inverse">
 	<div class="container-fluid"></div>
 	<ul class="nav navbar-nav">
 		<li><a href="Home.jsp">Home</a></li>
@@ -37,10 +35,12 @@ li {
 	</div>
 	</nav>
 	<div align="center">
-<br><h2><p class="bg-primary" >${requestScope.name}</p></h2>
-<br>${requestScope.description}
-<br>${requestScope.price}
-</div>
+		<br>
+		<h2>
+			<p class="bg-primary">${requestScope.name}</p>
+		</h2>
+		<br>${requestScope.description} <br>${requestScope.price}
+	</div>
 
 </body>
 </html>
