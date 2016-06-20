@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	  <%@ page isELIgnored="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -31,8 +32,8 @@ li {
 	<nav class="navbar navbar-inverse"> <b>
 
 		<ul class="nav nav-pills nav-justified">
-			<li><a href="Home.jsp">Home</a></li>
-			<li><a href="Fruits.jsp">Fruits</a></li>
+			<li><a href="/WEB-INF/view/Home.jsp">Home</a></li>
+			<li><a href="/WEB-INF/view/Fruits.jsp">Fruits</a></li>
 			<li><a href="Vegetables.jsp">Vegetables</a></li>
 			<li><a href="Contact.jsp">Contact Us</a></li>
 			<li><a href="Cart.jsp">Cart</a></li>

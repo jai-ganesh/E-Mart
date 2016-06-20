@@ -16,7 +16,7 @@ public class UserController {
 	@RequestMapping("/")
 	public String gotohome()
 	{
-		return "Home";
+		return "adminHome";
 	}
 	
 	@RequestMapping("/isValidUser")
