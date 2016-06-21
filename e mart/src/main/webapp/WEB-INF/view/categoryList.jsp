@@ -6,10 +6,30 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Categories</title>
 </head>
 <body>
+<div ng-app="myApp" ng-controller="myCtrl">
+
+
+
+</div>
+
+<script>
+	var app = angular.module("myApp", []);
+	app.controller("myCtrl", function($scope) {
+		$scope.list = ${categoryList};
+		
+	});
+</script>
+
+<tr ng-repeat="s in categorylist">
+<td>{{s.categoryid}}</td>
+<td>{{s.categoryname}}</td>
+<td>{{s.categorydescription}}</td>
+</tr>
 ${message}
 <h4>List of availabe categories</h4>
 <form:form method="post" action="updateCategories" modelAttributes="category">
@@ -28,9 +48,7 @@ ${message}
 <td><input name="categoryList[${status.index}].address"  value="${category.description}"/></td>
 </tr>
 </c:forEach>
-
 </table>
 </form:form>
-
 </body>
 </html>

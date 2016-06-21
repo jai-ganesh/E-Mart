@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.Gson;
 import com.niit.emart.bean.Category;
 import com.niit.emart.userdao.CategoryDAO;
 
@@ -41,7 +42,9 @@ public ModelAndView updateCategory(@ModelAttribute("category") ArrayList<Categor
 	ModelAndView mv = new ModelAndView("/categoryList");
 	String message = count +" record(s) are updated";
 	List categoryList= categoryDAO.getAllCategories();
-	mv.addObject("message",message);
+	Gson gson = new Gson();
+	 String json = gson.toJson(categoryList);
+	 	mv.addObject("message",message);
 	mv.addObject("categoryList", categoryList);
 	return mv;
 }
