@@ -54,10 +54,8 @@ li {
 						class="form-control" name="password" required=""> <br>
 					<button type="submit" class="btn btn-success">Login</button>
 					<button type="reset" class="btn btn-success">Clear</button>
-					<br>
-					<br>
-					<a href="register.jsp" type="button" class="btn btn-link">Register
-						Here</a>
+					<br> <br> <a href="register.jsp" type="button"
+						class="btn btn-link">Register Here</a>
 				</p>
 			</center>
 		</form:form>

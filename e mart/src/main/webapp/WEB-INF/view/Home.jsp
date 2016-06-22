@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	  <%@ page isELIgnored="false" %>
+<%@ page isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -35,7 +35,8 @@ li {
 			<li><a href="<c:url value="/"/>">Home</a></li>
 			<li><a href="<c:url value="/WEB-INF/view/Fruits.jsp"/>">Fruits</a></li>
 			<li><a href="/Vegetables/">Vegetables</a></li>
-			<li><a href="/emart/src/main/webapp/WEB-INF/view/Contact.jsp">Contact Us</a></li>
+			<li><a href="/emart/src/main/webapp/WEB-INF/view/Contact.jsp">Contact
+					Us</a></li>
 			<li><a href="Cart.jsp">Cart</a></li>
 			<li><a href="Login.jsp">Login</a></li>
 			<li><a>Welcome ${sessionScope.username}</a></li>

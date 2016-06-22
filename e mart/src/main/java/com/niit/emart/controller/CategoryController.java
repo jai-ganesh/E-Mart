@@ -30,11 +30,14 @@ public ModelAndView getAllCategories(){
 	System.out.println("getAllCategories");
 	List<Category> categoryList = categoryDAO.getAllCategories();
 	ModelAndView mv = new ModelAndView("/categoryList");
-	mv.addObject("categoryList",categoryList);
+	Gson gson = new Gson();
+	 String json = gson.toJson(categoryList);
+	 	
+	mv.addObject("categoryList",json);
+
 	return mv;
-	
 }
-@RequestMapping("/updateCategories")
+/*@RequestMapping("/categoryList")
 public ModelAndView updateCategory(@ModelAttribute("category") ArrayList<Category> categories)
 {
 	int count = categoryDAO.updateCategories(categories);
@@ -45,9 +48,9 @@ public ModelAndView updateCategory(@ModelAttribute("category") ArrayList<Categor
 	Gson gson = new Gson();
 	 String json = gson.toJson(categoryList);
 	 	mv.addObject("message",message);
-	mv.addObject("categoryList", categoryList);
-	return mv;
-}
+	mv.addObject("categoryList",json);
+		return mv;
+}*/
 
 }
 

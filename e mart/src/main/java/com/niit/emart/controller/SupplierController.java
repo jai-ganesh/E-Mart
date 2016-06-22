@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.Gson;
 import com.niit.emart.bean.Supplier;
 import com.niit.emart.userdao.SupplierDAO;
 
@@ -21,7 +22,9 @@ public class SupplierController {
 		System.out.println("getAllSuppliers");
 		List<Supplier> supplierList = supplierDAO.getAllSuppliers();
 		ModelAndView mv= new ModelAndView("/supplierList");
-		mv.addObject("supplierList", supplierList);
+		Gson gson = new Gson();
+		 String json = gson.toJson(supplierList);
+		mv.addObject("supplierList", json);
 		return mv;
 	}
 }
