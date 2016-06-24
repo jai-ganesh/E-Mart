@@ -12,15 +12,18 @@ public class TestCategory {
 		context.scan("com.niit.emart");
 		context.refresh();
 		
-		
-		CategoryDAO categoryDAO = (CategoryDAO) context.getBean("categoryDAO");
-		
+   	CategoryDAO categoryDAO = (CategoryDAO) context.getBean("categoryDAO");
 		Category category = new Category();
-		category.setId("1");
+		 category.setId("1");
 		category.setName("Apple");
 		category.setDescription("This is Apple");
-		
+			
 		categoryDAO.saveOrUpdate(category);
+	
+		
+		
+	/*	categoryDAO.delete("1");*/
+		
 		
 	}
 }

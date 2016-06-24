@@ -35,12 +35,14 @@ table, th, td {
 				<th>Id</th>
 				<th>Name</th>
 				<th>Address</th>
+				<th></th>
 
 			</tr>
 			<tr ng-repeat="s in list">
 				<td>{{s.id}}</td>
 				<td>{{s.name}}</td>
 				<td>{{s.description}}</td>
+				<td><input type= "button" value="Delete"></td>
 			</tr>
 		</table>
 
