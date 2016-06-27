@@ -22,8 +22,7 @@ public class TestCategory {
 	
 		
 		
-	/*	categoryDAO.delete("1");*/
-		
+		/*categoryDAO.delete("1");*/
 		
 	}
 }

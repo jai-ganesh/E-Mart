@@ -69,6 +69,4 @@ public class ApplicationContextConfig {
     public CategoryDAO geCategorDao(SessionFactory sessionFactory) {
     	return new CategoryDAOImpl(sessionFactory);
     }
-
-
 }

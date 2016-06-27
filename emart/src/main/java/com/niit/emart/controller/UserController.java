@@ -16,9 +16,38 @@ public class UserController {
 	@RequestMapping("/")
 	public String gotohome()
 	{
-		return "adminHome";
+		return "Home";
 	}
-	
+	@RequestMapping ("/Fruits")
+	public String Fruits()
+	{
+		return "Fruits";
+	}
+	@RequestMapping ("/Vegetables")
+	public String Vegetables()
+	{
+		return "Vegetables";
+	}
+	@RequestMapping ("/Contact")
+	public String contactus()
+	{
+		return "Contact";
+	}
+	@RequestMapping ("/Login")
+	public String login()
+	{
+		return "Login";
+	}
+	@RequestMapping ("/register")
+	public String register()
+	{
+		return "register";
+	}
+	@RequestMapping ("/Cart")
+	public String cart()
+	{
+		return "Cart";
+	}
 	@RequestMapping("/isValidUser")
 	public ModelAndView showMessage(@RequestParam(value="username") String username,
 	@RequestParam(value="password") String password){

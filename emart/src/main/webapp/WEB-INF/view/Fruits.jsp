@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -23,12 +24,12 @@ li {
 	<nav class="navbar navbar-inverse">
 	<div class="container-fluid"></div>
 	<b><ul class="nav nav-pills nav-justified">
-			<li><a href="Home.jsp">Home</a></li>
-			<li><a href="Fruits.jsp">Fruits</a></li>
-			<li><a href="Vegetables.jsp">Vegetables</a></li>
-			<li><a href="Contact.jsp">Contact Us</a></li>
-			<li><a href="Cart.jsp">Cart</a></li>
-			<li><a href="Login.jsp">Login</a></li>
+			<li><a href="<c:url value="/"/>">Home</a></li>
+			<li><a href="<c:url value="/Fruits"/>">Fruits</a></li>
+			<li><a href="<c:url value="/Vegetables"/>">Vegetables</a></li>
+			<li><a href="<c:url value="/Contact"/>">Contact Us</a></li>
+			<li><a href="<c:url value="/Cart"/>">Cart</a></li>
+			<li><a href="<c:url value="/Login"/>">Login</a></li>
 			<li><a>Welcome ${sessionScope.username}</a></li>
 		</ul></b>
 	</div>
@@ -43,7 +44,7 @@ li {
 				<td></td>
 
 				<td><a href="ServletInfo?id=1" method="get"><img
-						src="apple.png" alt="Cinque Terre" title="Apple" width="100"
+						src="<c:url value="/resources/apple.jpg"/>" alt="Cinque Terre" title="Apple" width="100"
 						height="100" value="1"></a>
 					<form>
 
@@ -58,7 +59,7 @@ li {
 					</form></td>
 				<td></td>
 				<td><a href="ServletInfo?id=2" method="get"><img
-						src="orange.png" class="img-rounded" alt="Cinque Terre"
+						src="<c:url value="/resources/orange.jpg"/>" class="img-rounded" alt="Cinque Terre"
 						title="Orange" width="100" height="100"></a>
 					<form>
 

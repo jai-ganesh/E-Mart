@@ -33,12 +33,11 @@ li {
 
 		<ul class="nav nav-pills nav-justified">
 			<li><a href="<c:url value="/"/>">Home</a></li>
-			<li><a href="<c:url value="/WEB-INF/view/Fruits.jsp"/>">Fruits</a></li>
-			<li><a href="/Vegetables/">Vegetables</a></li>
-			<li><a href="/emart/src/main/webapp/WEB-INF/view/Contact.jsp">Contact
-					Us</a></li>
-			<li><a href="Cart.jsp">Cart</a></li>
-			<li><a href="Login.jsp">Login</a></li>
+			<li><a href="<c:url value="/Fruits"/>">Fruits</a></li>
+			<li><a href="<c:url value="/Vegetables"/>">Vegetables</a></li>
+			<li><a href="<c:url value="/Contact"/>">Contact Us</a></li>
+			<li><a href="<c:url value="/Cart"/>">Cart</a></li>
+			<li><a href="<c:url value="/Login"/>">Login</a></li>
 			<li><a>Welcome ${sessionScope.username}</a></li>
 		</ul>
 	</b></nav>

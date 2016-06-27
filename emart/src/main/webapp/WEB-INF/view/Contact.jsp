@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,14 +32,14 @@ li {
 		<div class="container-fluid"></div>
 		<b>
 			<ul class="nav nav-pills nav-justified">
-				<li><a href="Home.jsp">Home</a></li>
-				<li><a href="Fruits.jsp">Fruits</a></li>
-				<li><a href="Vegetables.jsp">Vegetables</a></li>
-				<li><a href="Contact.jsp">Contact Us</a></li>
-				<li><a href="Cart.jsp">Cart</a></li>
-				<li><a href="Login.jsp">Login</a></li>
-				<li><a>Welcome ${sessionScope.username}</a></li>
-			</ul>
+			<li><a href="<c:url value="/"/>">Home</a></li>
+			<li><a href="<c:url value="/Fruits"/>">Fruits</a></li>
+			<li><a href="<c:url value="/Vegetables"/>">Vegetables</a></li>
+			<li><a href="<c:url value="/Contact"/>">Contact Us</a></li>
+			<li><a href="<c:url value="/Cart"/>">Cart</a></li>
+			<li><a href="<c:url value="/Login"/>">Login</a></li>
+			<li><a>Welcome ${sessionScope.username}</a></li>
+		</ul>
 		</b>
 	</div>
 	</nav>
@@ -51,7 +52,7 @@ li {
 	<div class="container">
 
 		<div class="jumbotron">
-			<img src="Contact.png" alt="contact img"
+			<img src="<c:url value="/resources/Contact.png"/>" alt="contact img"
 				style="width: 150px; height: 100px;">
 			<div align="right">
 				<br> Address: 71,Uttam gandhi road, <br> Nungambakkam <br>
