@@ -10,13 +10,62 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
-import com.niit.emart.bean.Category;
-import com.niit.emart.userdao.CategoryDAO;
+import com.niit.emart.dao.CategoryDAO;
+import com.niit.emart.dao.CategoryDAOImpl;
+import com.niit.emart.model.Category;
+
 
 @Controller
 public class CategoryController {
+
+	@Autowired
+	private CategoryDAO categoryDAO;
+	
+
+	@RequestMapping("/addCategory")
+	public ModelAndView addCategory(@ModelAttribute Category category) {
+		categoryDAO.saveOrUpdate(category);
+	  return new ModelAndView("/adminHome");
+	 }
+	
+	@RequestMapping("/getAllCategories")
+	public ModelAndView getAllCategories() {
+
+		System.out.println("getAllCategories");
+		
+		List<Category> categoryList = categoryDAO.list();
+		
+		ModelAndView mv = new ModelAndView("/categoryList");
+		mv.addObject("categoryList", categoryList);
+
+		return mv;
+	}
+	
+	
+	@RequestMapping("/updateCategories")
+	public ModelAndView updateCategory(@ModelAttribute("category") ArrayList<Category> categories)
+	{
+		Category c =categories.get(0);
+		categoryDAO.saveOrUpdate(c);
+		
+		System.out.println("updating category");
+		ModelAndView mv = new ModelAndView("/categoryList");
+		
+	    List<Category> categoryList = categoryDAO.list();
+		mv.addObject("categoryList", categoryList);
+		
+		return mv;
+	}
+
+}
+
+
+
+/*
+@Controller
+public class CategoryController {
 @Autowired
-private CategoryDAO categoryDAO;
+private CategoryDAOImpl categoryDAO;
 @RequestMapping("/addCategory")
 		public ModelAndView addCategory(@RequestParam(value="categoryName") String categoryName,@RequestParam(value="categoryDescription") String categoryDescription){
 	System.out.println("addCategory");
@@ -37,7 +86,7 @@ public ModelAndView getAllCategories(){
 
 	return mv;
 }
-/*@RequestMapping("/categoryList")
+@RequestMapping("/categoryList")
 public ModelAndView updateCategory(@ModelAttribute("category") ArrayList<Category> categories)
 {
 	int count = categoryDAO.updateCategories(categories);
@@ -50,9 +99,9 @@ public ModelAndView updateCategory(@ModelAttribute("category") ArrayList<Categor
 	 	mv.addObject("message",message);
 	mv.addObject("categoryList",json);
 		return mv;
-}*/
+}
 
 }
 
 
-
+*/

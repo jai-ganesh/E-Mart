@@ -31,7 +31,7 @@ li {
 			<div class="container-fluid"></div>
 			<b>
 				<ul class="nav nav-pills nav-justified">
-			<li><a href="<c:url value="/"/>">Home</a></li>
+			<li><a href="<c:url value="/Home"/>">Home</a></li>
 			<li><a href="<c:url value="/Fruits"/>">Fruits</a></li>
 			<li><a href="<c:url value="/Vegetables"/>">Vegetables</a></li>
 			<li><a href="<c:url value="/Contact"/>">Contact Us</a></li>
@@ -42,7 +42,7 @@ li {
 			</b>
 			</div>
 		</nav>
-
+	
 
 		<form:form action="isValidUser" method="post">
 

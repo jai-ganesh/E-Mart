@@ -1,5 +1,5 @@
 package com.niit.emart.userdao;
-
+/*
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,3 +39,4 @@ public class SupplierDAO {
 	}
 
 }
+*/

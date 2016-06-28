@@ -1,5 +1,5 @@
 package com.niit.emart.userdao;
-
+/*
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,3 +41,5 @@ list.add(c1);
 		return 1;
 	}
 }
+
+*/

@@ -6,14 +6,43 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.niit.emart.userdao.UserDAO;
+import com.niit.emart.dao.UserDAO;
 
 @Controller
 public class UserController {
 
 	@Autowired
 	UserDAO userDAO;
-	@RequestMapping("/")
+@RequestMapping("/")
+public String gotoadminhome()
+{
+	return "Login";
+}
+	
+    
+    @RequestMapping("/isValidUser")
+	public ModelAndView isValidUser(@RequestParam(value = "name") String name,
+			@RequestParam(value = "password") String password) {
+		System.out.println("in controller");
+
+		String message;
+		ModelAndView mv ;
+		if (userDAO.isValidUser(name, password,true)) 
+		{
+			message = "Valid credentials";
+			 mv = new ModelAndView("adminHome");
+		} else {
+			message = "Invalid credentials";
+			 mv = new ModelAndView("login");
+		}
+
+		mv.addObject("message", message);
+		mv.addObject("name", name);
+		return mv;
+	}
+	
+
+	@RequestMapping("/Home")
 	public String gotohome()
 	{
 		return "Home";
@@ -48,21 +77,5 @@ public class UserController {
 	{
 		return "Cart";
 	}
-	@RequestMapping("/isValidUser")
-	public ModelAndView showMessage(@RequestParam(value="username") String username,
-	@RequestParam(value="password") String password){
-		System.out.println("in controller");
-		String message;
-		if (userDAO.isValidUser(username,password)){
-			message="Valid credentials";
-		}
-		else {
-			message="invalid credentials";
-		}
-		ModelAndView mv=new ModelAndView("Home");
-		mv.addObject("message",message);
-		mv.addObject("username", username);
-		return mv;
-		}
-	}
 
+}

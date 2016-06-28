@@ -1,4 +1,4 @@
-package com.niit.emart.bean;
+/*package com.niit.emart.bean;
 
 import org.springframework.stereotype.Component;
 
@@ -32,3 +32,4 @@ public class Supplier {
 		this.address = address;
 	}
 }
+*/

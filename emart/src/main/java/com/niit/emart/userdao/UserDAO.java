@@ -1,5 +1,5 @@
 package com.niit.emart.userdao;
-
+/*
 import org.springframework.stereotype.Repository;
 @Repository
 
@@ -17,3 +17,4 @@ public class UserDAO {
 	}
 
 }
+*/

@@ -1,4 +1,5 @@
 package com.niit.emart.bean;
+/*package com.niit.emart.bean;
 
 import org.springframework.stereotype.Repository;
 
@@ -34,3 +35,4 @@ public class Category {
 	}
 
 }
+*/

@@ -24,6 +24,12 @@
 			<version>4.3.0.RELEASE</version>
 		</dependency>
 		<dependency>
+			<groupId>com.niit</groupId>
+	<artifactId>emartbackend</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	
+		</dependency>
+		<dependency>
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
@@ -54,7 +60,7 @@
 
 	</dependencies>
 	<build>
-	<plugins>
+		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
