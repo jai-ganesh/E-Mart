@@ -15,13 +15,15 @@ public class User {
 	@Id
 	private String id;
 	private String name;
+	private String password;
+	
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	private String password;
+	
 	public String getId() {
 		return id;
 	}

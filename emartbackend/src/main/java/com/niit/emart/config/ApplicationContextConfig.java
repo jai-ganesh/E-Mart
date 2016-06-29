@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.niit.emart.dao.CategoryDAO;
 import com.niit.emart.dao.CategoryDAOImpl;
 import com.niit.emart.model.Category;
+import com.niit.emart.model.User;
 
 @Configuration
 @ComponentScan("com.niit.emart")
@@ -51,6 +52,7 @@ public class ApplicationContextConfig {
     	LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
     	sessionBuilder.addProperties(getHibernateProperties());
     	sessionBuilder.addAnnotatedClasses(Category.class);
+    	sessionBuilder.addAnnotatedClasses(User.class);
     	return sessionBuilder.buildSessionFactory();
     }
     

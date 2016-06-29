@@ -24,16 +24,16 @@ public String gotoadminhome()
 	public ModelAndView isValidUser(@RequestParam(value = "name") String name,
 			@RequestParam(value = "password") String password) {
 		System.out.println("in controller");
-
+		
 		String message;
 		ModelAndView mv ;
-		if (userDAO.isValidUser(name, password,true)) 
+		if (userDAO.isValidUser(name,password,true)) 
 		{
 			message = "Valid credentials";
 			 mv = new ModelAndView("adminHome");
 		} else {
 			message = "Invalid credentials";
-			 mv = new ModelAndView("login");
+			 mv = new ModelAndView("Home");
 		}
 
 		mv.addObject("message", message);
@@ -41,7 +41,6 @@ public String gotoadminhome()
 		return mv;
 	}
 	
-
 	@RequestMapping("/Home")
 	public String gotohome()
 	{
@@ -76,6 +75,11 @@ public String gotoadminhome()
 	public String cart()
 	{
 		return "Cart";
+	}
+	@RequestMapping ("/addCategory")
+	public String add()
+	{
+		return "addCategory";
 	}
 
 }

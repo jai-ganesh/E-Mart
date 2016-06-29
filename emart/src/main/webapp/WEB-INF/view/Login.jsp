@@ -50,7 +50,7 @@ li {
 				<h1>Login</h1>
 				<p class="col-xs-4">
 					<label for="username">USERNAME:</label> <input type="text"
-						class="form-control" name="username" required=""> <label
+						class="form-control" name="name" required=""> <label
 						for="password">PASSWORD:</label> <input type="password"
 						class="form-control" name="password" required=""> <br>
 					<button type="submit" class="btn btn-success">Login</button>

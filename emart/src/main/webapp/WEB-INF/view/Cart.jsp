@@ -18,12 +18,12 @@ li {
 	float: left;
 }
 </style>
-<title>Cart</title>
+<title>List</title>
 </head>
 <body>
 
 	<nav class="navbar navbar-inverse">
-	<div class="container-fluid"></div>
+	<div class="container-fluid">
 	<b>
 		<ul class="nav nav-pills nav-justified">
 			<li><a href="<c:url value="/Home"/>">Home</a></li>
@@ -38,5 +38,14 @@ li {
 	</div>
 	</nav>
 	<div align="center">
+	
+	<h4>Welcome Admin</h4>
+	<br>
+	<br>
+
+	<a href="getAllCategories"> Categories</a>
+	<br>
+	<a href="getAllSuppliers"> Suppliers</a>
+</div>
 </body>
 </html>
