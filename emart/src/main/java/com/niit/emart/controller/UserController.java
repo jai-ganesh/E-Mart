@@ -76,10 +76,6 @@ public String gotoadminhome()
 	{
 		return "Cart";
 	}
-	@RequestMapping ("/addCategory")
-	public String add()
-	{
-		return "addCategory";
-	}
+	
 
 }

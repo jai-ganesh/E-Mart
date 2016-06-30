@@ -19,60 +19,28 @@ table, th, td {
 </style>
 </head>
 <body>
-	<script> 
-
-	var app = angular.module("myApp", []);
-	app.controller("myCtrl", function($scope) {
-		$scope.list = ${supplierList};
-		
-	});
-</script>
-
-	<div ng-app="myApp" ng-controller="myCtrl">
-
-		<table>
-			<tr>
-
-				<th>Id</th>
-				<th>Name</th>
-				<th>Address</th>
-
-			</tr>
-			<tr ng-repeat="s in list">
-				<td>{{s.id}}</td>
-				<td>{{s.name}}</td>
-				<td>{{s.address}}</td>
-			</tr>
-		</table>
-
-	</div>
-
-	${message}
+	
 	<h4>List of available Suppliers</h4>
-	<form:form method="post" action="updateSuppliers"
-		modelAttribute="supplier">
-		<table width="50%">
-			<tr>
-				<th>S.No</th>
-				<th>Id</th>
-				<th>Name</th>
-				<th>Address</th>
 
-			</tr>
-			<c:forEach items="${supplierList}" var="supplier" varStatus="status">
-				<tr>
-					<td align="center">${status.count}</td>
-					<td><input name="supplierList[${status.index}].id"
-						readonly="readonly" value="${supplier.id}" /></td>
-					<td><input name="supplierList[${status.index}].name"
-						value="${supplier.name}" /></td>
-					<td><input name="supplierList[${status.index}].address"
-						value="${supplier.address}" /></td>
+<table width="50%">
+	<tr>
+	   
+		<th align="left">Id</th>
+		<th align="left">Name</th>
+		<th align="left">Address</th>
+		
+	</tr>
+	<c:forEach items="${supplierList}" var="supplier" varStatus="status">
+		<tr>
+			
+			<td>${supplier.id}</td>
+			<td>${supplier.name}</td>
+			<td>${supplier.address}</td>
+			
+		</tr>
+	</c:forEach>
+</table>
 
-				</tr>
-			</c:forEach>
-		</table>
 
-	</form:form>
 </body>
 </html>

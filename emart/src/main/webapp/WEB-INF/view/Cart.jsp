@@ -37,15 +37,6 @@ li {
 	</b>
 	</div>
 	</nav>
-	<div align="center">
 	
-	<h4>Welcome Admin</h4>
-	<br>
-	<br>
-
-	<a href="getAllCategories"> Categories</a>
-	<br>
-	<a href="getAllSuppliers"> Suppliers</a>
-</div>
 </body>
 </html>

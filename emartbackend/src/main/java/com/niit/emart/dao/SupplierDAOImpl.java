@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.emart.model.Supplier;
 
+
 @Repository("supplierDAO")
 public class SupplierDAOImpl implements SupplierDAO {
 	
@@ -62,3 +63,4 @@ public class SupplierDAOImpl implements SupplierDAO {
 
 
 }
+

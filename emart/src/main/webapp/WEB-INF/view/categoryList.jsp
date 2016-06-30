@@ -11,49 +11,41 @@
 	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Categories</title>
-<style type="text/css">
-.tg {
+<style>
+table, th, td {
+	border: 1px solid grey;
 	border-collapse: collapse;
-	border-spacing: 0;
-	border-color: #ccc;
-}
-
-.tg td {
-	font-family: Arial, sans-serif;
-	font-size: 14px;
-	padding: 10px 5px;
-	border-style: solid;
-	border-width: 1px;
-	overflow: hidden;
-	word-break: normal;
-	border-color: #ccc;
-	color: #333;
-	background-color: #fff;
-}
-
-.tg th {
-	font-family: Arial, sans-serif;
-	font-size: 14px;
-	font-weight: normal;
-	padding: 10px 5px;
-	border-style: solid;
-	border-width: 1px;
-	overflow: hidden;
-	word-break: normal;
-	border-color: #ccc;
-	color: #333;
-	background-color: #f0f0f0;
-}
-
-.tg .tg-4eph {
-	background-color: #f9f9f9
+	padding: 5px;
 }
 </style>
 </head>
 <body>
 
+<h2>ADD Category</h2>
 
-<a href="<c:url value="/addCategory"/>">ADD</a>
+	<form:form action="addCategory" method="post">
+		<table>
+			<tr>
+				<td>Category ID:</td>
+				<td><input type="text" name="id"></td>
+			</tr>
+			<tr>
+				<td>Category Name:</td>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td>Category Description:</td>
+				<td><input type="text" name="description"></td>
+			</tr>
+
+			<tr>
+				<td><input type="submit" value="Add">
+				<td><input type="reset" value="Reset">
+			</tr>
+			
+		</table>
+
+	</form:form>
 	
 	<br>
 	<h3>Category List</h3>
@@ -80,35 +72,6 @@
 
 
 
-<!-- 
-	<script> 
-
-	var app = angular.module("myApp", []);
-	app.controller("myCtrl", function($scope) {
-		$scope.list = ${categoryList};
-		
-	});
-</script>
-
-	<div ng-app="myApp" ng-controller="myCtrl">
-
-		<table>
-			<tr>
-
-				<th>Id</th>
-				<th>Name</th>
-				<th>Address</th>
-				<th></th>
-
-			</tr>
-			<tr ng-repeat="s in list">
-				<td>{{s.id}}</td>
-				<td>{{s.name}}</td>
-				<td>{{s.description}}</td>
-				<td><input type= "button" value="Delete"></td>
-			</tr>
-		</table>
-	</div>
--->
+ 
 </body>
 </html>
