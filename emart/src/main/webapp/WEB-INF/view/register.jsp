@@ -31,7 +31,7 @@ li {
 			<li><a href="<c:url value="/Contact"/>">Contact Us</a></li>
 			<li><a href="<c:url value="/Cart"/>">Cart</a></li>
 			<li><a href="<c:url value="/Login"/>">Login</a></li>
-			<li><a>Welcome ${sessionScope.username}</a></li>
+			<li><a>Welcome </a></li>
 		</ul>
 	</b>
 	</div>
@@ -50,7 +50,7 @@ li {
 						class="form-control" name="password" required=""> <label
 						for="password">Re-Enter Password</label> <input type="password"
 						class="form-control" name="password" required=""> <label
-						for="number">Contact No.</label> <input type="number"
+						for="text">Contact No.</label> <input type="text"
 						class="form-control" name="number" required=""> <label
 						for="address">Address Door no/Street:</label> <input type="text"
 						class="form-control input" name="address" required=""> <label

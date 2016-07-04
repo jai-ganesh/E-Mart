@@ -16,7 +16,7 @@ public class UserController {
 @RequestMapping("/")
 public String gotoadminhome()
 {
-	return "Login";
+return "Login";
 }
 	
     
@@ -30,10 +30,11 @@ public String gotoadminhome()
 		if (userDAO.isValidUser(name,password,true)) 
 		{
 			message = "Valid credentials";
-			 mv = new ModelAndView("adminHome");
+			 mv = new ModelAndView("Home");
 		} else {
 			message = "Invalid credentials";
-			 mv = new ModelAndView("Home");
+			 mv = new ModelAndView("Login");
+			 System.out.println(message);
 		}
 
 		mv.addObject("message", message);
@@ -76,6 +77,5 @@ public String gotoadminhome()
 	{
 		return "Cart";
 	}
-	
 
 }

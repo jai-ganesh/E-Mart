@@ -38,7 +38,7 @@ li {
 			<li><a href="<c:url value="/Contact"/>">Contact Us</a></li>
 			<li><a href="<c:url value="/Cart"/>">Cart</a></li>
 			<li><a href="<c:url value="/Login"/>">Login</a></li>
-			<li><a>Welcome ${sessionScope.username}</a></li>
+			<li><a>Welcome </a></li>
 		</ul>
 		</b>
 	</div>

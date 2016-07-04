@@ -19,8 +19,9 @@ table, th, td {
 }
 </style>
 </head>
-<body>
 
+<body>
+	
 <h2>ADD Category</h2>
 
 	<form:form action="addCategory" method="post">
@@ -63,15 +64,13 @@ table, th, td {
 					<td>${category.id}</td>
 					<td>${category.name}</td>
 					<td>${category.description}</td>
-					<td><a href="<c:url value='category/edit/${category.id}' />">Edit</a></td>
-					<td><a href="<c:url value='category/remove/${category.id}' />">Delete</a></td>
+					<td><a href="<c:url value='/category/edit/${category.id}' />">Edit</a></td>
+				
+					<td><a href="<c:url value='/category/remove/${category.id}' />">Delete</a></td>
+					
 				</tr>
 			</c:forEach>
 		</table>
 	</c:if>
-
-
-
- 
 </body>
 </html>
