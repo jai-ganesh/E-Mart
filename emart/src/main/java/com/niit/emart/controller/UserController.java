@@ -30,7 +30,7 @@ return "Login";
 		if (userDAO.isValidUser(name,password,true)) 
 		{
 			message = "Valid credentials";
-			 mv = new ModelAndView("Home");
+			 mv = new ModelAndView("adminHome");
 		} else {
 			message = "Invalid credentials";
 			 mv = new ModelAndView("Login");

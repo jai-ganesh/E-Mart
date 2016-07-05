@@ -19,27 +19,55 @@ table, th, td {
 </style>
 </head>
 <body>
-	
+
+	<h2>ADD Supplier</h2>
+
+	<form:form action="addSupplier" method="post">
+		<table>
+			<tr>
+				<td>Supplier ID:</td>
+				<td><input type="text" name="id"></td>
+			</tr>
+			<tr>
+				<td>Supplier Name:</td>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td>Supplier Address:</td>
+				<td><input type="text" name="address"></td>
+			</tr>
+
+			<tr>
+				<td><input type="submit" value="Add">
+				<td><input type="reset" value="Reset">
+			</tr>
+
+		</table>
+
+	</form:form>
 	<h4>List of available Suppliers</h4>
 
-<table width="50%">
-	<tr>
-	   
-		<th align="left">Id</th>
-		<th align="left">Name</th>
-		<th align="left">Address</th>
-		
-	</tr>
-	<c:forEach items="${supplierList}" var="supplier" varStatus="status">
+	<table width="50%">
 		<tr>
-			
-			<td>${supplier.id}</td>
-			<td>${supplier.name}</td>
-			<td>${supplier.address}</td>
-			
+
+			<th align="left">Id</th>
+			<th align="left">Name</th>
+			<th align="left">Address</th>
+			<th align="left">Edit</th>
+			<th align="left">Delete</th>
+
 		</tr>
-	</c:forEach>
-</table>
+		<c:forEach items="${supplierList}" var="supplier" varStatus="status">
+			<tr>
+
+				<td>${supplier.id}</td>
+				<td>${supplier.name}</td>
+				<td>${supplier.address}</td>
+				<td><a href="<c:url value='/supplier/edit/${supplier.id}' />">Edit</a></td>
+				<td><a href="<c:url value='/supplier/remove/${supplier.id}' />">Delete</a></td>
+			</tr>
+		</c:forEach>
+	</table>
 
 
 </body>

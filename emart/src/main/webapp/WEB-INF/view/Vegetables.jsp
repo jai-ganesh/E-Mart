@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -54,8 +54,8 @@ li {
 				<td></td>
 
 				<td><a href="ServletInfo?id=3" method="get"><img
-						src="<c:url value="/resources/onion.jpg"/>" class="img-rounded" alt="Cinque Terre"
-						title="Onion" width="100" height="100"></a>
+						src="<c:url value="/resources/onion.jpg"/>" class="img-rounded"
+						alt="Cinque Terre" title="Onion" width="100" height="100"></a>
 					<form>
 
 						<div class="panel panel-default">
@@ -69,8 +69,8 @@ li {
 					</form></td>
 				<td></td>
 				<td><a href="ServletInfo?id=4" method="get"><img
-						src="<c:url value="/resources/tomato.jpg"/>" class="img-rounded" alt="Cinque Terre"
-						title="Tomato" width="100" height="100"></a>
+						src="<c:url value="/resources/tomato.jpg"/>" class="img-rounded"
+						alt="Cinque Terre" title="Tomato" width="100" height="100"></a>
 					<form>
 
 						<div class="panel panel-default">

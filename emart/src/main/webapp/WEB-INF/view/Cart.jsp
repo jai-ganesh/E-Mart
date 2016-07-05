@@ -24,19 +24,19 @@ li {
 
 	<nav class="navbar navbar-inverse">
 	<div class="container-fluid">
-	<b>
-		<ul class="nav nav-pills nav-justified">
-			<li><a href="<c:url value="/Home"/>">Home</a></li>
-			<li><a href="<c:url value="/Fruits"/>">Fruits</a></li>
-			<li><a href="<c:url value="/Vegetables"/>">Vegetables</a></li>
-			<li><a href="<c:url value="/Contact"/>">Contact Us</a></li>
-			<li><a href="<c:url value="/Cart"/>">Cart</a></li>
-			<li><a href="<c:url value="/Login"/>">Login</a></li>
-			<li><a>Welcome </a></li>
-		</ul>
-	</b>
+		<b>
+			<ul class="nav nav-pills nav-justified">
+				<li><a href="<c:url value="/Home"/>">Home</a></li>
+				<li><a href="<c:url value="/Fruits"/>">Fruits</a></li>
+				<li><a href="<c:url value="/Vegetables"/>">Vegetables</a></li>
+				<li><a href="<c:url value="/Contact"/>">Contact Us</a></li>
+				<li><a href="<c:url value="/Cart"/>">Cart</a></li>
+				<li><a href="<c:url value="/Login"/>">Login</a></li>
+				<li><a>Welcome </a></li>
+			</ul>
+		</b>
 	</div>
 	</nav>
-	
+
 </body>
 </html>

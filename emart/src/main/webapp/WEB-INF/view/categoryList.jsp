@@ -21,8 +21,8 @@ table, th, td {
 </head>
 
 <body>
-	
-<h2>ADD Category</h2>
+
+	<h2>ADD Category</h2>
 
 	<form:form action="addCategory" method="post">
 		<table>
@@ -43,21 +43,23 @@ table, th, td {
 				<td><input type="submit" value="Add">
 				<td><input type="reset" value="Reset">
 			</tr>
-			
+
 		</table>
 
 	</form:form>
-	
+
 	<br>
 	<h3>Category List</h3>
 	<c:if test="${!empty categoryList}">
-		<table class="tg">
+		<table width="50%">
 			<tr>
-				<th width="80">Category ID</th>
-				<th width="120">Category Name</th>
-				<th width="120">Category Description</th>
-				<th width="60">Edit</th>
-				<th width="60">Delete</th>
+
+				<th align="left">Id</th>
+				<th align="left">Name</th>
+				<th align="left">Description</th>
+				<th align="left">Edit</th>
+				<th align="left">Delete</th>
+
 			</tr>
 			<c:forEach items="${categoryList}" var="category">
 				<tr>
@@ -65,9 +67,9 @@ table, th, td {
 					<td>${category.name}</td>
 					<td>${category.description}</td>
 					<td><a href="<c:url value='/category/edit/${category.id}' />">Edit</a></td>
-				
-					<td><a href="<c:url value='/category/remove/${category.id}' />">Delete</a></td>
-					
+					<td><a
+						href="<c:url value='/category/remove/${category.id}' />">Delete</a></td>
+
 				</tr>
 			</c:forEach>
 		</table>

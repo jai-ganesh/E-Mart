@@ -20,8 +20,12 @@ public class SupplierController {
 	@RequestMapping("/addSupplier")
 	public ModelAndView addSupplier(@ModelAttribute Supplier supplier) {
 		supplierDAO.saveOrUpdate(supplier);
-	  return new ModelAndView("/adminHome");
-	 }
+		List<Supplier> supplierList = supplierDAO.list();
+		ModelAndView mv = new ModelAndView("/supplierList");
+		mv.addObject("supplierList", supplierList);
+		return mv;
+
+	}
 
 	@RequestMapping("/getAllSuppliers")
 	public ModelAndView getAllSuppliers() {
@@ -29,10 +33,8 @@ public class SupplierController {
 		System.out.println("getAllSuppliers");
 		
 		List<Supplier> supplierList = supplierDAO.list();
-		
 		ModelAndView mv = new ModelAndView("/supplierList");
 		mv.addObject("supplierList", supplierList);
-
 		return mv;
 	}
 }

@@ -45,7 +45,7 @@ li {
 
 	<div class="container">
 		<br>
-		
+
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
@@ -77,12 +77,12 @@ li {
 					<img src="<c:url value="/resources/banner.jpg"/>" alt="Flower"
 						width="460" height="345">
 				</div>
-				
+
 				<div class="item">
 					<img src="<c:url value="/resources/banner2.jpg"/>" alt="Flower"
 						width="460" height="345">
 				</div>
-				
+
 
 			</div>
 
