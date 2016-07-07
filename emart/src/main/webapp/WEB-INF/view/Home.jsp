@@ -21,6 +21,7 @@ li {
 
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
 	width: 70%;
+	height:50%;
 	margin: auto;
 }
 </style>
@@ -60,27 +61,27 @@ li {
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
 					<img src="<c:url value="/resources/2.jpg"/>" alt="Chania"
-						width="460" height="345">
+						width="460px" height="345px">
 				</div>
 
 				<div class="item">
 					<img src="<c:url value="/resources/11.jpg"/>" alt="Chania"
-						width="460" height="345">
+						width="460px" height="345px">
 				</div>
 
 				<div class="item">
 					<img src="<c:url value="/resources/111.jpg"/>" alt="Flower"
-						width="460" height="345">
+						width="460px" height="345px">
 				</div>
 
 				<div class="item">
 					<img src="<c:url value="/resources/banner.jpg"/>" alt="Flower"
-						width="460" height="345">
+						width="460px" height="345px">
 				</div>
 
 				<div class="item">
 					<img src="<c:url value="/resources/banner2.jpg"/>" alt="Flower"
-						width="460" height="345">
+						width="460px" height="345px">
 				</div>
 
 

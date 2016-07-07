@@ -8,13 +8,15 @@
 <title>Admin</title>
 </head>
 <body>
-	<h4>Welcome ${sessionScope.name}</h4>
+	<h4>Welcome ${sessionScope.username}</h4>
 	<br>
 	<br>
 
 	<a href="getAllCategories"> Categories</a>
 	<br>
 	<a href="getAllSuppliers"> Suppliers</a>
+	<br>
+	<a href="getAllProducts"> Products</a>
 
 </body>
 </html>
