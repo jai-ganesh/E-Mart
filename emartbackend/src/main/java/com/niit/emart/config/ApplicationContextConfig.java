@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.niit.emart.dao.CategoryDAO;
 import com.niit.emart.dao.CategoryDAOImpl;
 import com.niit.emart.model.Category;
+import com.niit.emart.model.Product;
 import com.niit.emart.model.Supplier;
 import com.niit.emart.model.User;
 
@@ -55,6 +56,7 @@ public class ApplicationContextConfig {
     	sessionBuilder.addAnnotatedClasses(Category.class);
     	sessionBuilder.addAnnotatedClasses(Supplier.class);
     	sessionBuilder.addAnnotatedClasses(User.class);
+    	sessionBuilder.addAnnotatedClasses(Product.class);
     	return sessionBuilder.buildSessionFactory();
     }
     

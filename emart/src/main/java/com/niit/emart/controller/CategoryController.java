@@ -78,10 +78,8 @@ public class CategoryController {
 
 		return mv;
 	}
-
-	@RequestMapping("category/edit/{id}")
+	@RequestMapping("/category/edit/{id}")
 	public ModelAndView editCategory(@ModelAttribute Category category) {
-
 		categoryDAO.saveOrUpdate(category);
 		List<Category> categoryList = categoryDAO.list();
 		ModelAndView mv = new ModelAndView("redirect:/getAllCategories");
