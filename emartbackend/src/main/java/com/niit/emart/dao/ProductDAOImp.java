@@ -11,6 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.emart.model.Product;
 
+
+
 @Repository("productDAO")
 public class ProductDAOImp implements ProductDAO {
 	
@@ -47,7 +49,7 @@ public class ProductDAOImp implements ProductDAO {
 
 	@Transactional
 	public Product get(String id) {
-		String hql = "from Product where id=" + id;
+		String hql = "from Product where id='" + id+"'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
 		@SuppressWarnings("unchecked")

@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@include file="navbar.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,65 +12,93 @@
 	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Categories</title>
-<style>
-table, th, td {
-	border: 1px solid grey;
+<style type="text/css">
+table.imagetable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #999999;
 	border-collapse: collapse;
-	padding: 5px;
+}
+table.imagetable th {
+	background:#b5cfd2 url('cell-blue.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+}
+table.imagetable td {
+	background:#dcddc0 url('cell-grey.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
 }
 </style>
 </head>
-
 <body>
+	<h1>Add a Category</h1>
 
-	<h2>ADD Category</h2>
+	<c:url var="addAction" value="/category/add"></c:url>
 
-	<form:form action="addCategory" method="post">
+	<form:form action="${addAction}" commandName="category">
 		<table>
 			<tr>
-				<td>Category ID:</td>
-				<td><input type="text" name="id"></td>
-			</tr>
-			<tr>
-				<td>Category Name:</td>
-				<td><input type="text" name="name"></td>
-			</tr>
-			<tr>
-				<td>Category Description:</td>
-				<td><input type="text" name="description"></td>
-			</tr>
+				<td><form:label path="id">
+						<spring:message text="ID" />
+					</form:label></td>
+				<c:choose>
+					<c:when test="${!empty category.id}">
+						<td><form:input path="id" disabled="true" readonly="true" />
+						</td>
+					</c:when>
 
+					<c:otherwise>
+						<td><form:input path="id" pattern =".{6,7}" required="true" title="id should contains 6 to 7 characters" /></td>
+					</c:otherwise>
+				</c:choose>
 			<tr>
-				<td><input type="submit" value="Add">
-				<td><input type="reset" value="Reset">
+			<form:input path="id" hidden="true"  />
+				<td><form:label path="name">
+						<spring:message text="Name" />
+					</form:label></td>
+				<td><form:input path="name" required="true" /></td>
 			</tr>
-
+			<tr>
+				<td><form:label path="description">
+						<spring:message text="Description" />
+					</form:label></td>
+				<td><form:input path="description" required="true" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><c:if test="${!empty category.name}">
+						<input type="submit"
+							value="<spring:message text="Edit Category"/>" />
+					</c:if> <c:if test="${empty category.name}">
+						<input type="submit" value="<spring:message text="Add Category"/>" />
+					</c:if></td>
+			</tr>
 		</table>
-
 	</form:form>
-
 	<br>
 	<h3>Category List</h3>
 	<c:if test="${!empty categoryList}">
-		<table width="50%">
+		<table class="imagetable">
 			<tr>
-
-				<th align="left">Id</th>
-				<th align="left">Name</th>
-				<th align="left">Description</th>
-				<th align="left">Edit</th>
-				<th align="left">Delete</th>
-
+				<th width="80">Category ID</th>
+				<th width="120">Category Name</th>
+				<th width="120">Category Description</th>
+				<th width="60">Edit</th>
+				<th width="60">Delete</th>
 			</tr>
 			<c:forEach items="${categoryList}" var="category">
 				<tr>
 					<td>${category.id}</td>
 					<td>${category.name}</td>
 					<td>${category.description}</td>
-					<td><a href="<c:url value='/category/edit/${category.id}' />">Edit</a></td>
-					<td><a
-						href="<c:url value='/category/remove/${category.id}' />">Delete</a></td>
-
+					<td><a href="<c:url value='category/edit/${category.id}' />">Edit</a></td>
+					<td><a href="<c:url value='category/remove/${category.id}' />">Delete</a></td>
 				</tr>
 			</c:forEach>
 		</table>

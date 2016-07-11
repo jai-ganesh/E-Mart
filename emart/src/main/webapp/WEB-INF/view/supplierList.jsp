@@ -2,7 +2,9 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ page isELIgnored="false"%>
+<%@include file="navbar.jsp" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
@@ -10,65 +12,97 @@
 	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Suppliers</title>
-<style>
-table, th, td {
-	border: 1px solid grey;
+
+<style type="text/css">
+table.imagetable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #999999;
 	border-collapse: collapse;
-	padding: 5px;
+}
+table.imagetable th {
+	background:#b5cfd2 url('cell-blue.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+}
+table.imagetable td {
+	background:#dcddc0 url('cell-grey.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
 }
 </style>
 </head>
 <body>
+	<h1>Add a Supplier</h1>
 
-	<h2>ADD Supplier</h2>
+	<c:url var="addAction" value="/supplier/add"></c:url>
 
-	<form:form action="addSupplier" method="post">
+	<form:form action="${addAction}" commandName="supplier">
 		<table>
 			<tr>
-				<td>Supplier ID:</td>
-				<td><input type="text" name="id"></td>
-			</tr>
-			<tr>
-				<td>Supplier Name:</td>
-				<td><input type="text" name="name"></td>
-			</tr>
-			<tr>
-				<td>Supplier Address:</td>
-				<td><input type="text" name="address"></td>
-			</tr>
+				<td><form:label path="id">
+						<spring:message text="ID" />
+					</form:label></td>
+				<c:choose>
+					<c:when test="${!empty supplier.id}">
+						<td><form:input path="id" disabled="true" readonly="true" />
+						</td>
+					</c:when>
 
+					<c:otherwise>
+						<td><form:input path="id" patttern =".{6,7}" required="true" title="id should contains 6 to 7 characters" /></td>
+					</c:otherwise>
+				</c:choose>
 			<tr>
-				<td><input type="submit" value="Add">
-				<td><input type="reset" value="Reset">
+			<form:input path="id" hidden="true"  />
+				<td><form:label path="name">
+						<spring:message text="Name" />
+					</form:label></td>
+				<td><form:input path="name" required="true" /></td>
 			</tr>
-
+			<tr>
+				<td><form:label path="address">
+						<spring:message text="Address" />
+					</form:label></td>
+				<td><form:input path="address" required="true" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><c:if test="${!empty supplier.name}">
+						<input type="submit"
+							value="<spring:message text="Edit Supplier"/>" />
+					</c:if> <c:if test="${empty supplier.name}">
+						<input type="submit" value="<spring:message text="Add Supplier"/>" />
+					</c:if></td>
+			</tr>
 		</table>
-
 	</form:form>
-	<h4>List of available Suppliers</h4>
-
-	<table width="50%">
-		<tr>
-
-			<th align="left">Id</th>
-			<th align="left">Name</th>
-			<th align="left">Address</th>
-			<th align="left">Edit</th>
-			<th align="left">Delete</th>
-
-		</tr>
-		<c:forEach items="${supplierList}" var="supplier" varStatus="status">
+	<br>
+	<h3>Supplier List</h3>
+	<c:if test="${!empty supplierList}">
+		<table class="imagetable">
 			<tr>
-
-				<td>${supplier.id}</td>
-				<td>${supplier.name}</td>
-				<td>${supplier.address}</td>
-				<td><a href="<c:url value='/supplier/edit/${supplier.id}' />">Edit</a></td>
-				<td><a href="<c:url value='/supplier/remove/${supplier.id}' />">Delete</a></td>
+				<th width="80">Supplier ID</th>
+				<th width="120">Supplier Name</th>
+				<th width="120">Supplier Address</th>
+				<th width="60">Edit</th>
+				<th width="60">Delete</th>
 			</tr>
-		</c:forEach>
-	</table>
-
-
+			<c:forEach items="${supplierList}" var="supplier">
+				<tr>
+					<td>${supplier.id}</td>
+					<td>${supplier.name}</td>
+					<td>${supplier.address}</td>
+					<td><a href="<c:url value='supplier/edit/${supplier.id}' />">Edit</a></td>
+					<td><a href="<c:url value='supplier/remove/${supplier.id}' />">Delete</a></td>
+				</tr>
+			</c:forEach>
+		</table>
+	</c:if>
 </body>
 </html>

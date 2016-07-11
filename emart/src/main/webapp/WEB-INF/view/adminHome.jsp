@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page isELIgnored="false"%>
+<%@include file="navbar.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,15 +16,16 @@
 <title>Admin</title>
 </head>
 <body>
-	<h4>Welcome ${username}</h4>
+<div align="center">
+	<h2>Welcome ${username}</h2>
 	<br>
 	<br>
 
-	<a href="getAllCategories"> Categories</a>
-	<br>
-	<a href="getAllSuppliers"> Suppliers</a>
-	<br>
-	<a href="getAllProducts"> Products</a>
-
+	<h2></h2><a href="categories"> Categories</a>
+|||
+	<a href="suppliers"> Suppliers</a>
+	|||
+	<a href="products"> Products</a>
+</h2></div>
 </body>
 </html>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@include file="navbar.jsp" %>
 <%@ page isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -29,19 +30,6 @@ li {
 </head>
 <body>
 
-
-	<nav class="navbar navbar-inverse"> <b>
-
-		<ul class="nav nav-pills nav-justified">
-			<li><a href="<c:url value="/Home"/>">Home</a></li>
-			<li><a href="<c:url value="/Fruits"/>">Fruits</a></li>
-			<li><a href="<c:url value="/Vegetables"/>">Vegetables</a></li>
-			<li><a href="<c:url value="/Contact"/>">Contact Us</a></li>
-			<li><a href="<c:url value="/Cart"/>">Cart</a></li>
-			<li><a href="<c:url value="/Login"/>">Login</a></li>
-			<li><a>Welcome ${sessionScope.username}</a></li>
-		</ul>
-	</b></nav>
 
 
 	<div class="container">
