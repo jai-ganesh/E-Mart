@@ -39,7 +39,5 @@
 				type="button" class="btn btn-link">Register Here</a>
 		</p>
 	</form:form>
-
-
 </body>
 </html>

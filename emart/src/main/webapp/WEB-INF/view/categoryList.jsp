@@ -38,12 +38,18 @@ table.imagetable td {
 </style>
 </head>
 <body>
-	<h1>Add a Category</h1>
+<div align="center">
+	
 
 	<c:url var="addAction" value="/category/add"></c:url>
 
 	<form:form action="${addAction}" commandName="category">
 		<table>
+			<c:if test="${!empty category.name}">
+						<h1>Edit Category</h1>
+					</c:if> <c:if test="${empty category.name}">
+						<h1>Add a Category</h1>
+					</c:if>
 			<tr>
 				<td><form:label path="id">
 						<spring:message text="ID" />
@@ -77,12 +83,16 @@ table.imagetable td {
 							value="<spring:message text="Edit Category"/>" />
 					</c:if> <c:if test="${empty category.name}">
 						<input type="submit" value="<spring:message text="Add Category"/>" />
-					</c:if></td>
+					</c:if><input type="reset" value="<spring:message text="Clear"/>" /></td>
 			</tr>
 		</table>
 	</form:form>
-	<br>
-	<h3>Category List</h3>
+	<br><c:if test="${!empty category.name}">
+						<h1></h1>
+					</c:if> <c:if test="${empty category.name}">
+						<h3>Category List</h3>
+											</c:if>
+	
 	<c:if test="${!empty categoryList}">
 		<table class="imagetable">
 			<tr>
@@ -103,5 +113,6 @@ table.imagetable td {
 			</c:forEach>
 		</table>
 	</c:if>
+</div>
 </body>
 </html>

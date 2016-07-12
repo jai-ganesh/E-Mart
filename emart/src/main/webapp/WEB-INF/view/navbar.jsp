@@ -30,7 +30,7 @@ li {
 <body>
 
 
-	<nav class="navbar navbar-inverse"> <b>
+	<nav class="navbar-inverse"> <b>
 
 		<ul class="nav nav-pills nav-justified">
 			<li><a href="<c:url value="/Home"/>">Home</a></li>
@@ -39,7 +39,7 @@ li {
 			<li><a href="<c:url value="/Contact"/>">Contact Us</a></li>
 			<li><a href="<c:url value="/Cart"/>">Cart</a></li>
 			<li><a href="<c:url value="/Login"/>">Login</a></li>
-			<li><a>Welcome ${sessionScope.username}</a></li>
+			<li><a>Welcome ${username}</a></li>
 		</ul>
 	</b></nav>
 

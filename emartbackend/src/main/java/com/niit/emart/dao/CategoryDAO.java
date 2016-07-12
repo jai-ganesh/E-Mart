@@ -18,6 +18,5 @@ public interface CategoryDAO {
 
 	public void delete(String id);
 
-
 }
 

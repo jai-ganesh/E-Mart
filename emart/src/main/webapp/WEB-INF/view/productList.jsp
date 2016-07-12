@@ -37,13 +37,21 @@ table.imagetable td {
 </style>
 </head>
 <body>
-	<h1>Add a Product</h1>
+<div align="center">
+	
 
 	<c:url var="addAction" value="/product/add"></c:url>
 
 	<form:form action="${addAction}" commandName="product">
 		<table>
-			<tr>
+		
+		<c:if test="${!empty product.name}">
+						<h1>Edit Product</h1>
+					</c:if> <c:if test="${empty product.name}">
+						<h1>Add a Product</h1>
+					</c:if>
+			<br><tr>
+			
 				<td><form:label path="id">
 						<spring:message text="ID" />
 					</form:label></td>
@@ -53,7 +61,7 @@ table.imagetable td {
 						</td>
 					</c:when>
 					<c:otherwise>
-						<td><form:input path="id" patttern ="{6,7}" required="true" title="id should contains 6 to 7 characters" /></td>
+						<td><form:input path="id" pattern ="{6,7}" required="true" title="id should contains 6 to 7 characters" /></td>
 					</c:otherwise>
 				</c:choose>
 			<tr>
@@ -61,22 +69,22 @@ table.imagetable td {
 				<td><form:label path="name">
 						<spring:message text="Name" />
 					</form:label></td>
-				<td><form:input path="name" required="true" /></td>
+				<td><form:input path="name" required="true" pattern="[a-zA-Z][a-zA-Z\s]*"/></td>
 			</tr>
 			
-			
+			<br>
 			<tr>
 				<td><form:label path="price">
-						<spring:message text="Price" />
+						<spring:message text="Price"/>
 					</form:label></td>
-				<td><form:input path="price" required="true" /></td>
+				<td><form:input path="price" required="true" pattern="^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?$"/></td>
 			</tr>
 			
 			<tr>
 				<td><form:label path="description">
 						<spring:message text="Description" />
 					</form:label></td>
-				<td><form:input path="description" required="true" /></td>
+				<td><form:input path="description" required="true" pattern="[a-zA-Z][a-zA-Z\s]*"/></td>
 			</tr>
 			
 			<tr>
@@ -99,12 +107,16 @@ table.imagetable td {
 							value="<spring:message text="Edit Product"/>" />
 					</c:if> <c:if test="${empty product.name}">
 						<input type="submit" value="<spring:message text="Add Product"/>" />
-					</c:if></td>
+					</c:if><input type="reset" value="<spring:message text="Clear"/>" /></td>
 			</tr>
 		</table>
 	</form:form>
-	<br>
-	<h3>Product List</h3>
+	<br><c:if test="${!empty product.name}">
+						<h1></h1>
+					</c:if> <c:if test="${empty product.name}">
+						<h3>Product List</h3>
+					</c:if>
+	
 	<c:if test="${!empty productList}">
 		<table class="imagetable">
 			<tr>
@@ -131,5 +143,6 @@ table.imagetable td {
 			</c:forEach>
 		</table>
 	</c:if>
+</div>
 </body>
 </html>

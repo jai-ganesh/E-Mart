@@ -39,12 +39,18 @@ table.imagetable td {
 </style>
 </head>
 <body>
-	<h1>Add a Supplier</h1>
+<div align="center">
+	
 
 	<c:url var="addAction" value="/supplier/add"></c:url>
 
 	<form:form action="${addAction}" commandName="supplier">
 		<table>
+			<c:if test="${!empty supplier.name}">
+						<h1>Edit Supplier</h1>
+					</c:if><c:if test="${empty supplier.name}">
+						<h1>Add a Supplier</h1>
+					</c:if>
 			<tr>
 				<td><form:label path="id">
 						<spring:message text="ID" />
@@ -78,12 +84,16 @@ table.imagetable td {
 							value="<spring:message text="Edit Supplier"/>" />
 					</c:if> <c:if test="${empty supplier.name}">
 						<input type="submit" value="<spring:message text="Add Supplier"/>" />
-					</c:if></td>
+					</c:if><input type="reset" value="<spring:message text="Clear"/>" /></td>
 			</tr>
 		</table>
 	</form:form>
-	<br>
-	<h3>Supplier List</h3>
+	<br><c:if test="${!empty supplier.name}">
+						<h1></h1>
+					</c:if><c:if test="${empty supplier.name}">
+						<h3>Supplier List</h3>
+					</c:if>
+	
 	<c:if test="${!empty supplierList}">
 		<table class="imagetable">
 			<tr>
@@ -104,5 +114,6 @@ table.imagetable td {
 			</c:forEach>
 		</table>
 	</c:if>
+</div>
 </body>
 </html>
