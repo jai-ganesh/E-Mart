@@ -12,6 +12,10 @@
 <title>Products</title>
 <!-- CSS goes in the document HEAD or added to your external stylesheet -->
 <style type="text/css">
+td {
+    height: 40px;
+    vertical-align: bottom;
+}
 table.imagetable {
 	font-family: verdana,arial,sans-serif;
 	font-size:11px;
@@ -61,7 +65,7 @@ table.imagetable td {
 						</td>
 					</c:when>
 					<c:otherwise>
-						<td><form:input path="id" pattern ="{6,7}" required="true" title="id should contains 6 to 7 characters" /></td>
+						<td><form:input path="id" pattern =".{6,7}" required="true" title="id should contains 6 to 7 characters" /></td>
 					</c:otherwise>
 				</c:choose>
 			<tr>
@@ -71,13 +75,12 @@ table.imagetable td {
 					</form:label></td>
 				<td><form:input path="name" required="true" pattern="[a-zA-Z][a-zA-Z\s]*"/></td>
 			</tr>
-			
 			<br>
 			<tr>
 				<td><form:label path="price">
 						<spring:message text="Price"/>
 					</form:label></td>
-				<td><form:input path="price" required="true" pattern="^\\$?(([1-9](\\d*|\\d{0,2}(,\\d{3})*))|0)(\\.\\d{1,2})?$"/></td>
+				<td><form:input path="price" required="true" /></td>
 			</tr>
 			
 			<tr>

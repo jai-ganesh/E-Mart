@@ -6,7 +6,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.stereotype.Component;
 
 @Entity
@@ -22,9 +24,16 @@ public class Product {
 	}
 
 	@Id
-	private String  id;
+	@NotBlank(message = "The id must not be null")
+		private String  id;
+	@NotBlank(message = "The name must not be null")
+	@Size(min = 3, max = 15,message = "Enter Minimum 3 characters")
 	private String name;
+	@NotBlank(message = "The Description must not be null")
+	@Size(min = 5, max = 15,message = "Enter Minimum 5 characters")
 	private String description;
+	@NotBlank(message = "The price must not be null")
+	
 	private double price;
 	
 	

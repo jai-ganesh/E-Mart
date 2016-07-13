@@ -4,14 +4,21 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Table(name="CATEGORY")
 public class Category {
 
-	private String id;
-	private String name;
-	private String description;
+@NotBlank(message = "The Id must not be null")
+private String id;
+@NotBlank(message = "The name must not be null")
+@Size(min = 3, max = 15,message = "Enter Minimum 3 characters")
+private String name;
+@NotBlank(message = "The  Description must not be null")
+@Size(min = 3, max = 20,message = "Enter Minimum 3 characters")private String description;
 	
 	@Id
 	@Column(name = "ID")

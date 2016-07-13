@@ -18,6 +18,7 @@
 li {
 	float: left;
 }
+
 </style>
 <title>Fruits</title>
 </head>
@@ -42,9 +43,9 @@ li {
 							<div class="panel-body" style="max-height: 10;">
 								<div class="checkbox">
 									<label><input type="checkbox" value="">Apple</label>
-								</div>
+								</div><div class="col-xs-2">
 								<input type="text" class="form-control" name="kgs"
-									placeholder="kgs">
+									placeholder="kgs"></div>
 					</form></td>
 				<td></td>
 				<td><a href="ServletInfo?id=2" method="get"><img
@@ -58,8 +59,9 @@ li {
 								<div class="checkbox">
 									<label><input type="checkbox" value="">Orange</label>
 								</div>
-								<input type="text" class="form-control" name="kgs"
-									placeholder="kgs">
+								<div class="col-xs-2">
+								<input type="text" class="form-control"  name="kgs"
+									placeholder="kgs"></div>
 					</form></td>
 				</div>
 				</div>

@@ -13,6 +13,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Categories</title>
 <style type="text/css">
+td {
+    height: 40px;
+    vertical-align: bottom;
+}
 table.imagetable {
 	font-family: verdana,arial,sans-serif;
 	font-size:11px;

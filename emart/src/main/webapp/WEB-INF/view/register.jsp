@@ -15,6 +15,18 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+function checkPasswords() {
+    var password1 = document.getElementById('password1');
+    var password2 = document.getElementById('password2');
+ 
+    if (password1.value != password2.value) {
+        password2.setCustomValidity('Passwords not match');
+    } else {
+        password2.setCustomValidity('');
+    }
+}
+</script>
 <style>
 li {
 	float: left;

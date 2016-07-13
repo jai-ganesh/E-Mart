@@ -14,6 +14,10 @@
 <title>Suppliers</title>
 
 <style type="text/css">
+td {
+    height: 40px;
+    vertical-align: bottom;
+}
 table.imagetable {
 	font-family: verdana,arial,sans-serif;
 	font-size:11px;
@@ -70,13 +74,13 @@ table.imagetable td {
 				<td><form:label path="name">
 						<spring:message text="Name" />
 					</form:label></td>
-				<td><form:input path="name" required="true" /></td>
+				<td><form:input path="name" required="true" pattern="[a-zA-Z][a-zA-Z\s]*" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="address">
 						<spring:message text="Address" />
 					</form:label></td>
-				<td><form:input path="address" required="true" /></td>
+				<td><form:input path="address" required="true" title="Enter city" /></td>
 			</tr>
 			<tr>
 				<td colspan="2"><c:if test="${!empty supplier.name}">
