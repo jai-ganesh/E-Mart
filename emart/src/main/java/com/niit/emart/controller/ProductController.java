@@ -1,9 +1,14 @@
 package com.niit.emart.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,12 +19,14 @@ import com.niit.emart.dao.SupplierDAO;
 import com.niit.emart.model.Category;
 import com.niit.emart.model.Product;
 import com.niit.emart.model.Supplier;
+import com.niit.emart.validator.ProductValidator;
 
 
 
 @Controller
 public class ProductController {
 
+	
 	@Autowired(required=true)
 	private ProductDAO productDAO;
 
@@ -28,6 +35,7 @@ public class ProductController {
 
 	@Autowired(required = true)
 	private SupplierDAO supplierDAO;
+	
 
 	
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
@@ -88,5 +96,19 @@ public class ProductController {
 	
 		return "productList";
 	}
+	@RequestMapping(value = "/emp/save.do", method = RequestMethod.POST)
+	public String saveProduct(
+			@ModelAttribute("employee") @Validated Employee employee,
+			BindingResult bindingResult, Model model) {
+		if (bindingResult.hasErrors()) {
+				return "productList";
+		}
+		
+		model.addAttribute("emp", employee);
+		emps.put(employee.getId(), employee);
+		return "empSaveSuccess";
+	}
+}
+
 }
 

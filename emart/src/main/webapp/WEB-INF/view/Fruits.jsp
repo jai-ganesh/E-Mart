@@ -75,6 +75,8 @@ li {
 
 
 		</tbody>
-	</table>
+	</table>	<br/>
+	<br/>
+<%@include file="Footer.jsp" %>
 </body>
 </html>

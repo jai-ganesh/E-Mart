@@ -82,6 +82,8 @@ li {
 
 		</tbody>
 	</table>
-
+	<br/>
+	<br/>
+<%@include file="Footer.jsp" %>
 </body>
 </html>

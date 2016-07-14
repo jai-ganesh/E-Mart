@@ -5,6 +5,8 @@
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://www.springframework.org/tags/form"
+	prefix="springForm"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -42,7 +44,7 @@ table.imagetable td {
 </head>
 <body>
 <div align="center">
-	
+	<springForm:errors path="*" cssClass="error" />
 
 	<c:url var="addAction" value="/product/add"></c:url>
 
@@ -54,9 +56,8 @@ table.imagetable td {
 					</c:if> <c:if test="${empty product.name}">
 						<h1>Add a Product</h1>
 					</c:if>
-			<br><tr>
-			
-				<td><form:label path="id">
+						
+				<tr><td><form:label path="id">
 						<spring:message text="ID" />
 					</form:label></td>
 				<c:choose>
@@ -73,7 +74,7 @@ table.imagetable td {
 				<td><form:label path="name">
 						<spring:message text="Name" />
 					</form:label></td>
-				<td><form:input path="name" required="true" pattern="[a-zA-Z][a-zA-Z\s]*"/></td>
+				<td><form:input path="name" required="true" /></td>
 			</tr>
 			<br>
 			<tr>
@@ -87,7 +88,7 @@ table.imagetable td {
 				<td><form:label path="description">
 						<spring:message text="Description" />
 					</form:label></td>
-				<td><form:input path="description" required="true" pattern="[a-zA-Z][a-zA-Z\s]*"/></td>
+				<td><form:input path="description" required="true" /></td>
 			</tr>
 			
 			<tr>
@@ -146,6 +147,8 @@ table.imagetable td {
 			</c:forEach>
 		</table>
 	</c:if>
-</div>
+</div>	<br/>
+	<br/>
+<%@include file="Footer.jsp" %>
 </body>
 </html>

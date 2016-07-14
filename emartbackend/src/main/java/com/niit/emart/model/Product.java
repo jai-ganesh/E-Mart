@@ -6,6 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -32,11 +33,9 @@ public class Product {
 	@NotBlank(message = "The Description must not be null")
 	@Size(min = 5, max = 15,message = "Enter Minimum 5 characters")
 	private String description;
-	@NotBlank(message = "The price must not be null")
 	
-	private double price;
-	
-	
+		private double price;
+		
 	public String getCategory_id() {
 		return category_id;
 	}
@@ -44,7 +43,6 @@ public class Product {
 		this.category_id = category_id;
 	}
 	
-
 	public String getSupplier_id() {
 		return supplier_id;
 	}

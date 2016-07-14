@@ -77,5 +77,10 @@ return "Login";
 	{
 		return "Cart";
 	}
+	@RequestMapping("/Upload")
+	public String gotoupload()
+	{
+	return "Upload";
+	}
 
 }

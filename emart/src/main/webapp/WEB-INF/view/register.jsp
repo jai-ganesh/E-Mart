@@ -42,8 +42,6 @@ li {
 				for="email">E-mail</label> <input type="email" class="form-control"
 				name="email" required=""> <label for="password">PASSWORD</label>
 			<input type="password" class="form-control" name="password"
-				required=""> <label for="password">Re-Enter Password</label>
-			<input type="password" class="form-control" name="password"
 				required=""> <label for="text">Contact No.</label> <input
 				type="text" class="form-control" name="number" required="">
 			<label for="address">Address Door no/Street:</label> <input
@@ -58,6 +56,8 @@ li {
 			<button type="reset" class="btn btn-success">Clear</button>
 		</div>
 	</form:form>
-
+	<br/>
+	<br/>
+<%@include file="Footer.jsp" %>
 </body>
 </html>

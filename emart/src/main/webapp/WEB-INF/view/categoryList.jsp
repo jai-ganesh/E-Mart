@@ -117,6 +117,8 @@ table.imagetable td {
 			</c:forEach>
 		</table>
 	</c:if>
-</div>
+</div>	<br/>
+	<br/>
+<%@include file="Footer.jsp" %>
 </body>
 </html>

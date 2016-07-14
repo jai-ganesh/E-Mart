@@ -37,7 +37,12 @@
 			<button type="reset" class="btn btn-success">Clear</button>
 			<br> <br> <a href="<c:url value="/register"/>"
 				type="button" class="btn btn-link">Register Here</a>
+				
+				<a href="<c:url value="/Upload"/>"
+				type="button" class="btn btn-Success">Upload</a>
 		</p>
-	</form:form>
+	</form:form>	<br/>
+	<br/>
+<%@include file="Footer.jsp" %>
 </body>
 </html>

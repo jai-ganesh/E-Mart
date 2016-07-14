@@ -26,6 +26,8 @@
 	<a href="suppliers"> Suppliers</a>
 	|||
 	<a href="products"> Products</a>
-</h2></div>
+</h2></div>	<br/>
+	<br/>
+<%@include file="Footer.jsp" %>
 </body>
 </html>

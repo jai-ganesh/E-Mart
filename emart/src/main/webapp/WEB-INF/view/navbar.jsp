@@ -39,7 +39,7 @@ li {
 			<li><a href="<c:url value="/Contact"/>">Contact Us</a></li>
 			<li><a href="<c:url value="/Cart"/>">Cart</a></li>
 			<li><a href="<c:url value="/Login"/>">Login</a></li>
-			<li><a>Welcome ${username}</a></li>
+			<li><a>Welcome ${user.name}</a></li>
 		</ul>
 	</b></nav>
 
