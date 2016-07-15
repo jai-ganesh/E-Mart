@@ -5,8 +5,7 @@
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib uri="http://www.springframework.org/tags/form"
-	prefix="springForm"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -44,13 +43,14 @@ table.imagetable td {
 </head>
 <body>
 <div align="center">
-	<springForm:errors path="*" cssClass="error" />
+	
 
 	<c:url var="addAction" value="/product/add"></c:url>
 
 	<form:form action="${addAction}" commandName="product">
 		<table>
-		
+		<font color="red">
+		<form:errors path="*" cssClass="error" /></font>
 		<c:if test="${!empty product.name}">
 						<h1>Edit Product</h1>
 					</c:if> <c:if test="${empty product.name}">

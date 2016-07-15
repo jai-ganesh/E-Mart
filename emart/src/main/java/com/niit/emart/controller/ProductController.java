@@ -1,14 +1,13 @@
 package com.niit.emart.controller;
 
-import javax.validation.Valid;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +18,7 @@ import com.niit.emart.dao.SupplierDAO;
 import com.niit.emart.model.Category;
 import com.niit.emart.model.Product;
 import com.niit.emart.model.Supplier;
-import com.niit.emart.validator.ProductValidator;
+
 
 
 
@@ -51,8 +50,11 @@ public class ProductController {
 
 	// For add and update product both
 	@RequestMapping(value = "/product/add", method = RequestMethod.POST)
-	public String addProduct(@ModelAttribute("product") Product product) {
-
+	public String addProduct(@ModelAttribute("product") @Validated Product product,BindingResult Result, Model model) {
+			if (Result.hasErrors()) {
+					return "productList";
+			}
+			else{
 		Category category = categoryDAO.getByName(product.getCategory().getName());
 		categoryDAO.saveOrUpdate(category);  // why to save??
 
@@ -70,6 +72,7 @@ public class ProductController {
 
 		return "redirect:/products";
 
+	}
 	}
 
 	@RequestMapping("product/remove/{id}")
@@ -93,22 +96,8 @@ public class ProductController {
 		model.addAttribute("listProducts", this.productDAO.list());
 		model.addAttribute("categoryList", this.categoryDAO.list());
 		model.addAttribute("supplierList", this.supplierDAO.list());
+			return "productList";
+	}
 	
-		return "productList";
-	}
-	@RequestMapping(value = "/emp/save.do", method = RequestMethod.POST)
-	public String saveProduct(
-			@ModelAttribute("employee") @Validated Employee employee,
-			BindingResult bindingResult, Model model) {
-		if (bindingResult.hasErrors()) {
-				return "productList";
-		}
-		
-		model.addAttribute("emp", employee);
-		emps.put(employee.getId(), employee);
-		return "empSaveSuccess";
-	}
-}
-
 }
 
