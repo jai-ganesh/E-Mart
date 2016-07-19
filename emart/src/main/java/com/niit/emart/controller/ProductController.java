@@ -1,7 +1,5 @@
 package com.niit.emart.controller;
 
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,11 +18,8 @@ import com.niit.emart.model.Product;
 import com.niit.emart.model.Supplier;
 
 
-
-
 @Controller
 public class ProductController {
-
 	
 	@Autowired(required=true)
 	private ProductDAO productDAO;
@@ -34,8 +29,6 @@ public class ProductController {
 
 	@Autowired(required = true)
 	private SupplierDAO supplierDAO;
-	
-
 	
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
 	public String listProducts(Model model) {
@@ -60,9 +53,7 @@ public class ProductController {
 
 		Supplier supplier = supplierDAO.getByName(product.getSupplier().getName());
 		supplierDAO.saveOrUpdate(supplier); // Why to save??
-		
-		
-		
+				
 		product.setCategory(category);
 		product.setSupplier(supplier);
 		
@@ -80,7 +71,7 @@ public class ProductController {
 
 		try {
 			productDAO.delete(id);
-			model.addAttribute("message", "Successfully Added");
+			model.addAttribute("message", "Successfully Deleted");
 		} catch (Exception e) {
 			model.addAttribute("message", e.getMessage());
 			e.printStackTrace();

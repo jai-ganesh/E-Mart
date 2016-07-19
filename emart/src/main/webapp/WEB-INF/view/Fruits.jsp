@@ -24,9 +24,7 @@ li {
 </head>
 <body>
 
-	<center>
-		<button type="button" class="btn btn-primary">Add to Cart</button>
-	</center>
+	
 
 	<table class="table table-hover">
 		<tbody>
@@ -41,11 +39,12 @@ li {
 						<div class="panel panel-default">
 							<div class="panel-heading">&#8377; 35/-</div>
 							<div class="panel-body" style="max-height: 10;">
-								<div class="checkbox">
-									<label><input type="checkbox" value="">Apple</label>
-								</div><div class="col-xs-2">
+									
+								<div class="col-xs-3">
+								<label>Apple</label><br>
 								<input type="text" class="form-control" name="kgs"
-									placeholder="kgs"></div>
+									placeholder="kgs"><br>
+									<button type="button" class="btn btn-primary">Add to Cart</button></div>
 					</form></td>
 				<td></td>
 				<td><a href="ServletInfo?id=2" method="get"><img
@@ -56,12 +55,11 @@ li {
 						<div class="panel panel-default">
 							<div class="panel-heading">&#8377; 25/-</div>
 							<div class="panel-body" style="max-height: 10;">
-								<div class="checkbox">
-									<label><input type="checkbox" value="">Orange</label>
-								</div>
-								<div class="col-xs-2">
+								<div class="col-xs-3">
+								<label>Orange</label><br>
 								<input type="text" class="form-control"  name="kgs"
-									placeholder="kgs"></div>
+									placeholder="kgs"><br>
+									<button type="button" class="btn btn-primary">Add to Cart</button></div>
 					</form></td>
 				</div>
 				</div>

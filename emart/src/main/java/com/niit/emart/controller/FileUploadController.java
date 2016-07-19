@@ -23,7 +23,7 @@ public class FileUploadController {
 	public @ResponseBody String handleFileUpload(
             @RequestParam("file") MultipartFile file){
         String name = file.getOriginalFilename();
-       String path = "D:\\shoppingcart\\img";
+       String path = "C:\\Users\\Home\\Downloads\\img";
         if (!file.isEmpty()) {
             try {
             	
@@ -46,7 +46,6 @@ public class FileUploadController {
             return "You failed to upload " + name + " because the file was empty.";
         }
     }
-
 	/**
 	 * Upload multiple file using Spring Controller
 	 */
@@ -78,8 +77,6 @@ public class FileUploadController {
 						new FileOutputStream(serverFile));
 				stream.write(bytes);
 				stream.close();
-
-				
 				message = message + "You successfully uploaded file=" + name
 						+ "";
 			} catch (Exception e) {

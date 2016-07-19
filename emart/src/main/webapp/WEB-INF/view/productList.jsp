@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@include file="navbar.jsp" %>
-    <%@ page isELIgnored="false"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@include file="navbar.jsp" %>
+<%@ page isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -66,7 +65,7 @@ table.imagetable td {
 						</td>
 					</c:when>
 					<c:otherwise>
-						<td><form:input path="id" pattern =".{6,7}" required="true" title="id should contains 6 to 7 characters" /></td>
+						<td><form:input path="id" pattern =".{6,7}" required="false" title="id should contains 6 to 7 characters" /></td>
 					</c:otherwise>
 				</c:choose>
 			<tr>
@@ -74,7 +73,7 @@ table.imagetable td {
 				<td><form:label path="name">
 						<spring:message text="Name" />
 					</form:label></td>
-				<td><form:input path="name" required="true" /></td>
+				<td><form:input path="name" pattern="[a-zA-Z][a-zA-Z\s]*" required="true" /></td>
 			</tr>
 			<br>
 			<tr>
@@ -88,7 +87,7 @@ table.imagetable td {
 				<td><form:label path="description">
 						<spring:message text="Description" />
 					</form:label></td>
-				<td><form:input path="description" required="true" /></td>
+				<td><form:input path="description" pattern="[a-zA-Z][a-zA-Z\s]*" required="true" /></td>
 			</tr>
 			
 			<tr>

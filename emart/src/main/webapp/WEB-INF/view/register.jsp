@@ -15,18 +15,6 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-function checkPasswords() {
-    var password1 = document.getElementById('password1');
-    var password2 = document.getElementById('password2');
- 
-    if (password1.value != password2.value) {
-        password2.setCustomValidity('Passwords not match');
-    } else {
-        password2.setCustomValidity('');
-    }
-}
-</script>
 <style>
 li {
 	float: left;
@@ -38,20 +26,20 @@ li {
 	<form:form action="Home.jsp" method="post">
 		<div class="col-xs-4">
 			<label for="username">User Name</label> <input type="text"
-				class="form-control" name="username" required=""> <label
+				class="form-control" name="username"  pattern="[a-zA-Z]{5,}" title="Minimum 5 letters" required=""> <label
 				for="email">E-mail</label> <input type="email" class="form-control"
-				name="email" required=""> <label for="password">PASSWORD</label>
-			<input type="password" class="form-control" name="password"
+				name="email" required=""> <label for="password">Password</label>
+			<input type="password" class="form-control" name="password" pattern="[a-zA-Z]{5,}" title="Minimum 5 letters"
 				required=""> <label for="text">Contact No.</label> <input
-				type="text" class="form-control" name="number" required="">
+				type="text" class="form-control" name="number" pattern="[0-9]{10}" title="Enter Number" required="">
 			<label for="address">Address Door no/Street:</label> <input
 				type="text" class="form-control input" name="address" required="">
 			<label for="area">Area:</label> <input type="text"
-				class="form-control input" name="area" required=""> <label
+				class="form-control input" name="area" pattern="[a-zA-Z]{3,}" title="Minimum 5 letters" required=""> <label
 				for="city">City:</label> <input type="text"
-				class="form-control input" name="city" required=""> <label
+				class="form-control input" name="city" pattern="[a-zA-Z]{3,}" title="Minimum 5 letters" required=""> <label
 				for="pincode">Pincode:</label> <input type="text"
-				class="form-control input" name="pincode" required=""> <br>
+				class="form-control input" name="pincode" pattern="[0-9]{6}" title="Minimum 5 letters" required=""> <br>
 			<button type="submit" class="btn btn-success">Register</button>
 			<button type="reset" class="btn btn-success">Clear</button>
 		</div>

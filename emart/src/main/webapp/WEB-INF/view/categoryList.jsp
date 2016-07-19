@@ -73,13 +73,13 @@ table.imagetable td {
 				<td><form:label path="name">
 						<spring:message text="Name" />
 					</form:label></td>
-				<td><form:input path="name" required="true" /></td>
+				<td><form:input path="name" pattern="[a-zA-Z][a-zA-Z\s]*" required="true" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="description">
 						<spring:message text="Description" />
 					</form:label></td>
-				<td><form:input path="description" required="true" /></td>
+				<td><form:input path="description" pattern="[a-zA-Z][a-zA-Z\s]*" required="true" /></td>
 			</tr>
 			<tr>
 				<td colspan="2"><c:if test="${!empty category.name}">

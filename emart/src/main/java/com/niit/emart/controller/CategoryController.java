@@ -36,7 +36,7 @@ public class CategoryController {
 	@RequestMapping(value= "/category/add", method = RequestMethod.POST)
 	public String addCategory(@ModelAttribute("category") Category category){
 		
-	
+	System.out.println("inside add controll");
 			categoryDAO.saveOrUpdate(category);
 		
 		return "redirect:/categories";

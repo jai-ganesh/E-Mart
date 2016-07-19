@@ -19,13 +19,7 @@
 <title>Login</title>
 </head>
 <body>
-
-
-
-
-
 	<form:form action="isValidUser" method="post">
-
 
 		<h1>Login</h1>
 		<p class="col-xs-4">
@@ -37,9 +31,10 @@
 			<button type="reset" class="btn btn-success">Clear</button>
 			<br> <br> <a href="<c:url value="/register"/>"
 				type="button" class="btn btn-link">Register Here</a>
-				
 				<a href="<c:url value="/Upload"/>"
 				type="button" class="btn btn-Success">Upload</a>
+				
+				
 		</p>
 	</form:form>	<br/>
 	<br/>

@@ -66,7 +66,7 @@ table.imagetable td {
 					</c:when>
 
 					<c:otherwise>
-						<td><form:input path="id" patttern =".{6,7}" required="true" title="id should contains 6 to 7 characters" /></td>
+						<td><form:input path="id" pattern =".{6,7}" required="true" title="id should contains 6 to 7 characters" /></td>
 					</c:otherwise>
 				</c:choose>
 			<tr>
