@@ -12,13 +12,13 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name="CATEGORY")
 public class Category {
 
-@NotBlank(message = "The Id must not be null")
+//@NotBlank(message = "The Id must not be null")
+	
 private String id;
-@NotBlank(message = "The name must not be null")
 @Size(min = 3, max = 15,message = "Enter Minimum 3 characters")
 private String name;
-@NotBlank(message = "The  Description must not be null")
-@Size(min = 3, max = 20,message = "Enter Minimum 3 characters")private String description;
+@Size(min = 3, max = 20,message = "Enter Minimum 3 characters")
+private String description;
 	
 	@Id
 	@Column(name = "ID")

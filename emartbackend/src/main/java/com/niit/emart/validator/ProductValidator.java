@@ -13,7 +13,6 @@ public class ProductValidator implements Validator{
 
 	public void validate(Object arg0, Errors arg1) {
 		Product p = (Product) arg0;
-		
 	}
 	
 

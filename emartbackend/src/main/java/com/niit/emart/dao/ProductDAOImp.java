@@ -62,5 +62,21 @@ public class ProductDAOImp implements ProductDAO {
 		return null;
 	}
 
+	@Transactional
+	public Product get1(String id) {
+		String hql = "from Product where id='" + id+"'";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		
+		@SuppressWarnings("unchecked")
+		List<Product> listProduct = (List<Product>) query.list();
+		
+		if (listProduct != null && !listProduct.isEmpty()) {
+			return listProduct.get(0);
+		}
+		
+		return null;
+	}
+
+
 
 }

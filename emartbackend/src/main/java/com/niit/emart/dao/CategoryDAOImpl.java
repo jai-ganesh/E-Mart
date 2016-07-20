@@ -37,6 +37,8 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 	@Transactional
 	public void saveOrUpdate(Category category) {
+		System.out.println("inside save method");
+		System.out.println(category.getId());
 		sessionFactory.getCurrentSession().saveOrUpdate(category);
 	}
 

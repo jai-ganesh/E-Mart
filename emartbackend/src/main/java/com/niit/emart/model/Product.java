@@ -6,6 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
@@ -25,16 +26,13 @@ public class Product {
 	}
 
 	@Id
-	@NotBlank(message = "The id must not be null")
 		private String  id;
-	@NotBlank(message = "The name must not be null")
-	@Size(min = 3, max = 15,message = "Enter Minimum 3 characters")
+		@Size(min = 3, max = 15,message = "Name must Minimum 3 characters")
 	private String name;
-	@NotBlank(message = "The Description must not be null")
-	@Size(min = 5, max = 15,message = "Enter Minimum 5 characters")
+		@Size(min = 5, max = 15,message = "Description must have Minimum 5 characters")
 	private String description;
-	
-		private double price;
+	@Min(value=50,message="Enter Above 50")
+	private int price;
 		
 	public String getCategory_id() {
 		return category_id;
@@ -51,8 +49,6 @@ public class Product {
 	}
 
 	private String category_id;
-	
-	
 	private String supplier_id;
 	
 	@ManyToOne
@@ -87,10 +83,10 @@ public class Product {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public double getPrice() {
+	public int getPrice() {
 		return price;
 	}
-	public void setPrice(double price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 	

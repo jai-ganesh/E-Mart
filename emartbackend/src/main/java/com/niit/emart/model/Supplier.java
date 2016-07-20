@@ -16,9 +16,11 @@ public class Supplier {
 	
 	@Id
 	@Column(name="ID")
-	@NotBlank(message = "The id must not be null")
-		private String id;
-	
+	private String id;
+	@Size(min = 3, max = 15,message = "Enter Minimum 3 characters")
+	private String name;
+	@Size(min = 5, max = 25,message = "Enter Minimum 5 characters")
+	private String address;
 	public String getId() {
 		return id;
 	}
@@ -42,12 +44,7 @@ public class Supplier {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	@NotBlank(message = "The name must not be null")
-	@Size(min = 3, max = 15,message = "Enter Minimum 3 characters")
-	private String name;
-	@NotBlank(message = "The address must not be null")
-	@Size(min = 5, max = 25,message = "Enter Minimum 5 characters")
-	private String address;
+
 	
 
 }
