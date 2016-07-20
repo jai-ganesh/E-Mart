@@ -14,18 +14,37 @@
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <title>Admin</title>
+<style>
+table {
+  border-spacing: 0.5rem;
+}
+td {
+  padding: 0.5rem;
+}
+
+
+</style>
 </head>
 <body>
 <div align="center">
-	<h2>Welcome ${username}</h2>
+	<h2>Welcome Admin</h2>
 	<br>
 	<br>
+<table>
+  <tr>
+    <td><a href="categories"> Categories</a></td>
+      </tr>
+      <tr></tr>
+  <tr>
+    <td><a href="suppliers"> Suppliers</a></td></td>
+    </tr>
+  <tr></tr>
+    <tr>
+    <td><a href="products"> Products</a></td>
+    
+  </tr>
+</table>
 
-	<h2></h2><a href="categories"> Categories</a>
-|||
-	<a href="suppliers"> Suppliers</a>
-	|||
-	<a href="products"> Products</a>
 	
 </h2></div>	<br/>
 	<br/>

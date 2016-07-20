@@ -39,8 +39,8 @@ public class CartController {
 	
 		model.addAttribute("cart", new Cart());
 		model.addAttribute("cartList", this.cartDAO.list());
-		model.addAttribute("totalAmount", cartDAO.getTotalAmount("user")); // Just to test, passwrdo user
-		model.addAttribute("displayCart", "true");
+		model.addAttribute("totalAmount", cartDAO.getTotalAmount("admin")); // Just to test, passwrdo user
+		
 		return "/Cart";
 	}
 	
@@ -62,7 +62,7 @@ public class CartController {
 	 cart.setPrice(product.getPrice());
 	 cart.setProductName(product.getName());
 	 cart.setQuantity(1);
-	 cart.setUserID("user");
+	 cart.setUserID("admin");
 	 cart.setStatus('N');
 		cartDAO.saveOrUpdate(cart);
 		//return "redirect:/views/home.jsp";

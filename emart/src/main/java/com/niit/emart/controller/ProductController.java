@@ -1,5 +1,9 @@
 package com.niit.emart.controller;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +14,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.google.gson.Gson;
 import com.niit.emart.dao.CategoryDAO;
 import com.niit.emart.dao.ProductDAO;
 import com.niit.emart.dao.SupplierDAO;
@@ -89,6 +95,17 @@ public class ProductController {
 		model.addAttribute("supplierList", this.supplierDAO.list());
 			return "productList";
 	}
-	
+	@RequestMapping("productinfo")
+    public String get1(HttpServletRequest req,Model model){
+		String id=req.getParameter("id");
+		Product p=productDAO.get(id);
+		Gson gson=new Gson();
+		String produ=gson.toJson(p);
+		model.addAttribute("productinfo",produ);
+		System.out.println(produ);
+		return "productinfo";
+        }
+
+		
 }
 

@@ -23,15 +23,12 @@ li {
 <title>Fruits</title>
 </head>
 <body>
-
-	
-
 	<table class="table table-hover">
 		<tbody>
 			<tr>
 				<td></td>
 
-				<td><a href="ServletInfo?id=1" method="get"><img
+				<td><a href="productinfo?id=,PRO001" method="get"><img
 						src="<c:url value="/resources/apple.jpg"/>" alt="Cinque Terre"
 						title="Apple" width="100" height="100" value="1"></a>
 					<form>

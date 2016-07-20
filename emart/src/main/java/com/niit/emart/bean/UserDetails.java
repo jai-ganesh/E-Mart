@@ -4,9 +4,7 @@ package com.niit.emart.bean;
 import java.io.Serializable;
 
 public class UserDetails implements Serializable {
-	
-
-	
+		
 	private String id;
 	private String name;
 	private String password;

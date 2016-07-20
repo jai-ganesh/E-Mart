@@ -57,7 +57,7 @@ table.imagetable td {
 					</c:if>
 						
 				<tr><td><form:label path="id">
-						<spring:message text="ID" />
+						<spring:message text="Product ID" />
 					</form:label></td>
 				<c:choose>
 					<c:when test="${!empty product.id}">
@@ -71,7 +71,7 @@ table.imagetable td {
 			<tr>
 			<form:input path="id" hidden="true"  />
 				<td><form:label path="name">
-						<spring:message text="Name" />
+						<spring:message text="Product Name" />
 					</form:label></td>
 				<td><form:input path="name" pattern="[a-zA-Z][a-zA-Z\s]*" required="true" /></td>
 			</tr>
@@ -111,6 +111,10 @@ table.imagetable td {
 					</c:if> <c:if test="${empty product.name}">
 						<input type="submit" value="<spring:message text="Add Product"/>" />
 					</c:if><input type="reset" value="<spring:message text="Clear"/>" /></td>
+			</tr>
+			<tr><td><a href="<c:url value="/Upload"/>"
+				type="button" class="btn btn-link">Upload Image</a>
+				</td>
 			</tr>
 		</table>
 	</form:form>

@@ -26,13 +26,11 @@
 				<br />
 				<sf:label path="password">Password :</sf:label>${userDetails.password}
 					<br />
-
-
 				<sf:label path="email">Email:</sf:label>${userDetails.email}
 					<br />
 				<br />
 				<sf:label path="mobile">Mobile #:</sf:label>${userDetails.mobile}
-					<br />
+				<br />
 				<br />
 				<sf:label path="address">Address :</sf:label>${userDetails.address}
 					<br />

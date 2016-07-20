@@ -30,11 +30,6 @@ li {
 </head>
 <body>
 
-
-	<center>
-		<button type="button" class="btn btn-primary">Add to Cart</button>
-	</center>
-
 	<table class="table table-hover">
 		<tbody>
 			<tr>
@@ -48,11 +43,11 @@ li {
 						<div class="panel panel-default">
 							<div class="panel-heading">&#8377; 30/-</div>
 							<div class="panel-body" style="max-height: 10;">
-								<div class="checkbox">
-									<label><input type="checkbox" value="">Onion</label>
-								</div>
+							<div class="col-xs-3">
+								<label>Onion</label><br>
 								<input type="text" class="form-control" name="kgs"
-									placeholder="kgs">
+									placeholder="kgs"><br>
+									<button type="button" class="btn btn-primary">Add to Cart</button></div>
 					</form></td>
 				<td></td>
 				<td><a href="ServletInfo?id=4" method="get"><img
@@ -63,11 +58,11 @@ li {
 						<div class="panel panel-default">
 							<div class="panel-heading">&#8377; 40/-</div>
 							<div class="panel-body" style="max-height: 10;">
-								<div class="checkbox">
-									<label><input type="checkbox" value="">Tomato</label>
-								</div>
+								<div class="col-xs-3">
+								<label>Tomato</label><br>
 								<input type="text" class="form-control" name="kgs"
-									placeholder="kgs">
+									placeholder="kgs"><br>
+									<button type="button" class="btn btn-primary">Add to Cart</button></div>
 					</form></td>
 				</div>
 				</div>

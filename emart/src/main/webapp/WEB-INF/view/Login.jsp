@@ -29,10 +29,9 @@
 				class="form-control" name="password" required=""> <br>
 			<button type="submit" class="btn btn-success">Login</button>
 			<button type="reset" class="btn btn-success">Clear</button>
-			<br> <br> <a href="<c:url value="/register"/>"
+			<br> <br> <a href="<c:url value="memberShip.obj"/>"
 				type="button" class="btn btn-link">Register Here</a>
-				<a href="<c:url value="/Upload"/>"
-				type="button" class="btn btn-Success">Upload</a>
+			
 				
 				
 		</p>

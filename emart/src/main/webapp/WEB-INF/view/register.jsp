@@ -23,23 +23,22 @@ li {
 <title>Register</title>
 </head>
 <body>
-	<form:form action="Home.jsp" method="post">
+	<form:form action="/" method="post">
 		<div class="col-xs-4">
 			<label for="username">User Name</label> <input type="text"
-				class="form-control" name="username"  pattern="[a-zA-Z]{5,}" title="Minimum 5 letters" required=""> <label
+				class="form-control" name="username"  pattern="[a-zA-Z]{3,}" title="Should not contain Number" required=""> <label
 				for="email">E-mail</label> <input type="email" class="form-control"
 				name="email" required=""> <label for="password">Password</label>
-			<input type="password" class="form-control" name="password" pattern="[a-zA-Z]{5,}" title="Minimum 5 letters"
+			<input type="password" class="form-control" name="password" pattern="[a-zA-Z]{5,}" title="Minimum 4 letters"
 				required=""> <label for="text">Contact No.</label> <input
-				type="text" class="form-control" name="number" pattern="[0-9]{10}" title="Enter Number" required="">
+				type="text" class="form-control" name="number" pattern="[0-9]{10}" title="Enter 10 Numbers" required="">
 			<label for="address">Address Door no/Street:</label> <input
 				type="text" class="form-control input" name="address" required="">
-			<label for="area">Area:</label> <input type="text"
-				class="form-control input" name="area" pattern="[a-zA-Z]{3,}" title="Minimum 5 letters" required=""> <label
+			 <label
 				for="city">City:</label> <input type="text"
-				class="form-control input" name="city" pattern="[a-zA-Z]{3,}" title="Minimum 5 letters" required=""> <label
+				class="form-control input" name="city" pattern="[a-zA-Z]{3,}" title="Enter Correct City Name" required=""> <label
 				for="pincode">Pincode:</label> <input type="text"
-				class="form-control input" name="pincode" pattern="[0-9]{6}" title="Minimum 5 letters" required=""> <br>
+				class="form-control input" name="pincode" pattern="[0-9]{6}" title="Pincode Should Contain 6 Digits" required=""> <br>
 			<button type="submit" class="btn btn-success">Register</button>
 			<button type="reset" class="btn btn-success">Clear</button>
 		</div>

@@ -18,7 +18,7 @@
 			<br />
 			<h2>
 				<!-- display the userId just entered -->
-				Welcome ${userDetails.name }
+				Welcome ${userDetails.name}
 			</h2>
 			<br />
 		</fieldset>

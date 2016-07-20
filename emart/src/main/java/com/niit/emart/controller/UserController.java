@@ -17,14 +17,11 @@ public class UserController {
 public String gotoadminhome()
 {
 return "Login";
-}
-	
-    
+}	    
     @RequestMapping("/isValidUser")
 	public ModelAndView isValidUser(@RequestParam(value = "name") String name,
 			@RequestParam(value = "password") String password) {
 		System.out.println("in controller");
-		
 		String message;
 		ModelAndView mv ;
 		if (userDAO.isValidUser(name,password,true)) 

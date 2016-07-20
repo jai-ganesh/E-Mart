@@ -36,7 +36,7 @@ html, body {
 }
 
 #footer {
-	background-color: #1a1a1a;
+	background-color: white;
 }
 /* Lastly, apply responsive CSS fixes as necessary */
 @media ( max-width : 767px) {
@@ -56,7 +56,7 @@ html, body {
 
 	<footer
 		style="position: fixed; bottom: 0px; width: 100%; height: 30px; background-color: black;">
-		<p align="right">E-Mart Services &copy; 2016 </p></footer>
+	<font color="white">	<p align="right">E-Mart Services &copy; 2016 </p></font></footer>
 
 
 

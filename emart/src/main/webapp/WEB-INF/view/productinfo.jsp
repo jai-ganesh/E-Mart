@@ -13,7 +13,8 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+ 
 <style>
 li {
 	float: left;
@@ -21,26 +22,41 @@ li {
 </style>
 </head>
 <body>
-	<nav class="navbar navbar-inverse">
-	<div class="container-fluid"></div>
-	<ul class="nav navbar-nav">
-		<li><a href="Home.jsp">Home</a></li>
-		<li><a href="Fruits.jsp">Fruits</a></li>
-		<li><a href="Vegetables.jsp">Vegetables</a></li>
-		<li><a href="Contact.jsp">Contact Us</a></li>
-		<li><a href="Cart.jsp">Cart</a></li>
-		<li><a href="Login.jsp">Login</a></li>
-		<li><a>Welcome ${sessionScope.username}</a></li>
-	</ul>
-	</div>
-	</nav>
-	<div align="center">
+<script>
+var val=${productinfo};
+	var app = angular.module("myApp", []);
+	app.controller("myCtrl", function($scope) {
+		$scope.list = val;
+		
+	});
+</script>
+<div ng-app="myApp" ng-controller="myCtrl">
+	<h1>{{list.id}}</h1>
+	<h1>{{list.name}}</h1>
+		<h1>{{list.description}}</h1>
+			<h1>{{list.price}}</h1>
+		
+	
+<table>
+
+<tr ng-repeat="x in list">
+
+<td>{{x.id}}</td>
+<td>{{x.name}}</td>
+<td>{{x.description}}</td>
+<td>{{x.price}}</td>
+<td>{{x.category.name}}</td>
+<td>{{x.supplier_id}}</td>
+</tr>
+</table>
+</div>
+	<!--  <div align="center">
 		<br>
 		<h2>
 			<p class="bg-primary">${requestScope.name}</p>
 		</h2>
 		<br>${requestScope.description} <br>${requestScope.price}
 	</div>
-
+-->
 </body>
 </html>
