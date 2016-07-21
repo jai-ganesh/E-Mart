@@ -28,7 +28,7 @@ public class Cart {
 	public void setTotal(int total) {
 		this.total = total;
 	}
-	public int getId() {
+	public int getId(){
 		return id;
 	}
 	public void setId(int id) {
