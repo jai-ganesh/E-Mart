@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@include file="navbar.jsp" %>
+<%@include file="navbar.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -43,11 +43,12 @@ li {
 						<div class="panel panel-default">
 							<div class="panel-heading">&#8377; 30/-</div>
 							<div class="panel-body" style="max-height: 10;">
-							<div class="col-xs-3">
-								<label>Onion</label><br>
-								<input type="text" class="form-control" name="kgs"
-									placeholder="kgs"><br>
-									<button type="button" class="btn btn-primary">Add to Cart</button></div>
+								<div class="col-xs-3">
+									<label>Onion</label><br> <input type="text"
+										class="form-control" name="kgs" placeholder="kgs"><br>
+									<button type="button" class="btn btn-primary">Add to
+										Cart</button>
+								</div>
 					</form></td>
 				<td></td>
 				<td><a href="ServletInfo?id=4" method="get"><img
@@ -59,10 +60,11 @@ li {
 							<div class="panel-heading">&#8377; 40/-</div>
 							<div class="panel-body" style="max-height: 10;">
 								<div class="col-xs-3">
-								<label>Tomato</label><br>
-								<input type="text" class="form-control" name="kgs"
-									placeholder="kgs"><br>
-									<button type="button" class="btn btn-primary">Add to Cart</button></div>
+									<label>Tomato</label><br> <input type="text"
+										class="form-control" name="kgs" placeholder="kgs"><br>
+									<button type="button" class="btn btn-primary">Add to
+										Cart</button>
+								</div>
 					</form></td>
 				</div>
 				</div>
@@ -77,8 +79,8 @@ li {
 
 		</tbody>
 	</table>
-	<br/>
-	<br/>
-<%@include file="Footer.jsp" %>
+	<br />
+	<br />
+	<%@include file="Footer.jsp"%>
 </body>
 </html>

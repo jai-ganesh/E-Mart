@@ -5,17 +5,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Shopping Cart</title>
-<link href="style.css" rel="stylesheet" type="text/css" />
+<title>E-Mart</title>
+
 </head>
 <body>
 	<div class="content">
-		
-			<h1> <center>  E Mart  </center></h1>
-			<hr color="blue" height="5">
- 
-			<a href="memberShip.obj" style="margin: 50;">Register here</a>
-		
+
+		<a href="memberShip.obj" style="margin: 50;">Register here</a>
+
 	</div>
 </body>
 </html>

@@ -13,9 +13,8 @@
 <title>Shopping Cart</title>
 
 <style>
-
-#head{
-color:blue
+#head {
+	color: blue
 }
 /* Main */
 #menu {
@@ -154,43 +153,43 @@ color:blue
 </style>
 </head>
 <body>
-	
-			<td align="right"> <a href="myCart">  My Cart  </a>( ${cartSize} )</td>
-			
-			
-		
-	<div id ="displayCart">
-		       
-			<table>
-				<tr>
-					<th align="left" width="80">Cart ID</th>
-					<th align="left" width="120">Product Name</th>
-					<th align="left" width="200">Quantity</th>
-					<th align="left" width="80">Price</th>
-					<th align="left" width="60">Delete from Cart</th>
 
-				</tr>
-				<c:forEach items="${cartList}" var="cart">
+	<td align="right"><a href="myCart"> My Cart </a>( ${cartSize} )</td>
+
+
+
+	<div id="displayCart">
+
+		<table>
+			<tr>
+				<th align="left" width="80">Cart ID</th>
+				<th align="left" width="120">Product Name</th>
+				<th align="left" width="200">Quantity</th>
+				<th align="left" width="80">Price</th>
+				<th align="left" width="60">Delete from Cart</th>
+
+			</tr>
+			<c:forEach items="${cartList}" var="cart">
 				<tr>
-					<td align="left" >${cart.id}</td>
-					<td align="left" >${cart.productName}</td>
-					<td align="left" >${cart.quantity}</td>
-					<td align="left" >${cart.price}</td>
-					<td align="left" ><a
+					<td align="left">${cart.id}</td>
+					<td align="left">${cart.productName}</td>
+					<td align="left">${cart.quantity}</td>
+					<td align="left">${cart.price}</td>
+					<td align="left"><a
 						href="<c:url value='/cart/delete/${cart.id}'  />">Delete</a></td>
-						<td align="left" ><a
-						href="<c:url value='pay/${cart.id}' />"> Proceed</a> </td>
+					<td align="left"><a href="<c:url value='pay/${cart.id}' />">
+							Proceed</a></td>
 				</tr>
-				</c:forEach>
-					</table>
-			
-			<h2>  Total cost : ${totalAmount}</h2>
-			<%-- <a href="<c:url value='/pay/${cart.userID}'/>">Proceed</a>  --%>
-			<a href="<c:url value='/pay/${cart.id}'/>">Proceed</a> 
-	
-	
-	
-	
+			</c:forEach>
+		</table>
+
+		<h2>Total cost : ${totalAmount}</h2>
+		<%-- <a href="<c:url value='/pay/${cart.userID}'/>">Proceed</a>  --%>
+		<a href="<c:url value='/pay/${cart.id}'/>">Proceed</a>
+
+
+
+
 	</div>
 </body>
 </html>

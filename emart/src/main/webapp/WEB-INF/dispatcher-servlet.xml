@@ -19,19 +19,22 @@
 	<context:annotation-config />
 	<!-- provide Your Base package to scan annotations for components -->
 	<context:component-scan base-package="com.niit.*" />
-<mvc:resources mapping="/resources/**" location="/WEB-INF/resources/" />
+	<mvc:resources mapping="/resources/**" location="/WEB-INF/resources/" />
 	<!-- WebFlow Configuration -->
 	<webflow:flow-executor id="flowExecutor" />
 
-	<webflow:flow-registry id="flowRegistry" flow-builder-services="flowBuilderServices" base-path="/WEB-INF">
+	<webflow:flow-registry id="flowRegistry"
+		flow-builder-services="flowBuilderServices" base-path="/WEB-INF">
 		<!-- here the id is mapped to invoke this flow -->
 		<webflow:flow-location id="memberShip" path="/memberShipFlow.xml" />
 	</webflow:flow-registry>
 
-	<webflow:flow-builder-services id="flowBuilderServices" view-factory-creator="viewFactoryCreator" />
+	<webflow:flow-builder-services id="flowBuilderServices"
+		view-factory-creator="viewFactoryCreator" />
 
 
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
 			<value>/WEB-INF/view/</value>
 		</property>
@@ -39,28 +42,35 @@
 			<value>.jsp</value>
 		</property>
 	</bean>
-	
-	<bean id="viewFactoryCreator" class="org.springframework.webflow.mvc.builder.MvcViewFactoryCreator"> 
-	<property name="viewResolvers"> 
-	<list> <ref bean="viewResolver" /> </list> 
-	</property> 
-	</bean> 
-	
-	<bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver"> 
-	<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" /> 
-	<property name="prefix" value="/" /> <property name="suffix" value=".jsp" /> 
-	</bean> 
-	
-	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter"> 
-	<property name="flowExecutor" ref="flowExecutor" /> 
-	</bean> 
-	
-	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping"> 
-	<property name="flowRegistry" ref="flowRegistry" /> <property name="order" value="0" /> 
-	</bean> 
-	
+
+	<bean id="viewFactoryCreator"
+		class="org.springframework.webflow.mvc.builder.MvcViewFactoryCreator">
+		<property name="viewResolvers">
+			<list>
+				<ref bean="viewResolver" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
+		<property name="flowExecutor" ref="flowExecutor" />
+	</bean>
+
+	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+		<property name="flowRegistry" ref="flowRegistry" />
+		<property name="order" value="0" />
+	</bean>
+
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
-	
+
 
 </beans>

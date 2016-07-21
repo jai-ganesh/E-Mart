@@ -10,7 +10,6 @@ import com.niit.emart.bean.UserDetails;
 public class RegistrationHandler{
 
 	public UserDetails initFlow(){
-		System.out.println("123");
 		return new UserDetails();
 	}
 

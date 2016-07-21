@@ -1,6 +1,5 @@
 package com.niit.emart.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -16,92 +15,51 @@ import com.niit.emart.model.Category;
 
 @Controller
 public class CategoryController {
-	
+
 	private CategoryDAO categoryDAO;
-	
-	@Autowired(required=true)
-	@Qualifier(value="categoryDAO")
-	public void setCategoryDAO(CategoryDAO ps){
+
+	@Autowired(required = true)
+	@Qualifier(value = "categoryDAO")
+	public void setCategoryDAO(CategoryDAO ps) {
 		this.categoryDAO = ps;
 	}
-	
+
 	@RequestMapping(value = "/categories", method = RequestMethod.GET)
 	public String listCategorys(Model model) {
 		model.addAttribute("category", new Category());
 		model.addAttribute("categoryList", this.categoryDAO.list());
 		return "categoryList";
 	}
-	
-	//For add and update category both
-	@RequestMapping(value= "/category/add", method = RequestMethod.POST)
-	public String addCategory(@ModelAttribute("category") Category category){
-		
-	System.out.println("inside add controll");
-			categoryDAO.saveOrUpdate(category);
-		
+
+	// For add and update category both
+	@RequestMapping(value = "/category/add", method = RequestMethod.POST)
+	public String addCategory(@ModelAttribute("category") Category category) {
+
+		System.out.println("inside add controll");
+		categoryDAO.saveOrUpdate(category);
+
 		return "redirect:/categories";
-		
+
 	}
-	
+
 	@RequestMapping("category/remove/{id}")
-    public String deleteCategory(@PathVariable("id") String id,ModelMap model) throws Exception{
-		
-       try {
-		categoryDAO.delete(id);
-		model.addAttribute("message","Successfully Added");
-	} catch (Exception e) {
-		model.addAttribute("message",e.getMessage());
-		e.printStackTrace();
-	}
-       //redirectAttrs.addFlashAttribute(arg0, arg1)
-        return "redirect:/categories";
-    }
- 
-    @RequestMapping("category/edit/{id}")
-    public String editCategory(@PathVariable("id") String id, Model model){
-    	System.out.println("editCategory");
-        model.addAttribute("category", this.categoryDAO.get(id));
-        model.addAttribute("listCategorys", this.categoryDAO.list());
-        return "categoryList";
-    }
+	public String deleteCategory(@PathVariable("id") String id, ModelMap model) throws Exception {
+
+		try {
+			categoryDAO.delete(id);
+			model.addAttribute("message", "Successfully Added");
+		} catch (Exception e) {
+			model.addAttribute("message", e.getMessage());
+			e.printStackTrace();
+		}
+		return "redirect:/categories";
 	}
 
-
-
-
- /*
- * 
- * @Controller public class CategoryController {
- * 
- * @Autowired private CategoryDAOImpl categoryDAO;
- * 
- * @RequestMapping("/addCategory") public ModelAndView
- * addCategory(@RequestParam(value="categoryName") String
- * categoryName,@RequestParam(value="categoryDescription") String
- * categoryDescription){ System.out.println("addCategory"); String message=
- * "Successfully created"; ModelAndView mv = new ModelAndView("/success");
- * mv.addObject("message",message); return mv; }
- * 
- * @RequestMapping("/getAllCategories") public ModelAndView getAllCategories(){
- * System.out.println("getAllCategories"); List<Category> categoryList =
- * categoryDAO.getAllCategories(); ModelAndView mv = new
- * ModelAndView("/categoryList"); Gson gson = new Gson(); String json =
- * gson.toJson(categoryList);
- * 
- * mv.addObject("categoryList",json);
- * 
- * return mv; }
- * 
- * @RequestMapping("/categoryList") public ModelAndView
- * updateCategory(@ModelAttribute("category") ArrayList<Category> categories) {
- * int count = categoryDAO.updateCategories(categories); System.out.println(
- * "updating category"); ModelAndView mv = new ModelAndView("/categoryList");
- * String message = count +" record(s) are updated"; List categoryList=
- * categoryDAO.getAllCategories(); Gson gson = new Gson(); String json =
- * gson.toJson(categoryList); mv.addObject("message",message);
- * mv.addObject("categoryList",json); return mv; }
- * 
- * }
- * 
- * 
- */
+	@RequestMapping("category/edit/{id}")
+	public String editCategory(@PathVariable("id") String id, Model model) {
+		System.out.println("editCategory");
+		model.addAttribute("category", this.categoryDAO.get(id));
+		model.addAttribute("listCategorys", this.categoryDAO.list());
+		return "categoryList";
+	}
+}

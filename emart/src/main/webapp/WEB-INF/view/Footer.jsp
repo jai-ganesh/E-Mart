@@ -56,7 +56,10 @@ html, body {
 
 	<footer
 		style="position: fixed; bottom: 0px; width: 100%; height: 30px; background-color: black;">
-	<font color="white">	<p align="right">E-Mart Services &copy; 2016 </p></font></footer>
+		<font color="white">
+			<p align="right">E-Mart Services &copy; 2016</p>
+		</font>
+	</footer>
 
 
 

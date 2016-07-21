@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Spring Mvc WebFlow Demo</title>
+<title>Register</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -16,23 +16,24 @@
 			<!-- for triggering webflow events using links,
 					 the eventId to be triggered is given in "href" attribute as:
 				 -->
-			<a href="${flowExecutionUrl}&_eventId_home">Home</a><br /> <br />
+		
 			<sf:form modelAttribute="userDetails">
-				<sf:label path="id">User ID :</sf:label>${userDetails.id}
+				<sf:label path="id">User ID :</sf:label><sf:input path="id" disabled="true" placeholder="${userDetails.id}" />
 					<br />
 				<br />
-				<sf:label path="name"> User Name:</sf:label>${userDetails.name}
+				<sf:label path="name"> User Name:</sf:label><sf:input path="name" disabled="true" placeholder="${userDetails.name}"/>
 					<br />
 				<br />
-				<sf:label path="password">Password :</sf:label>${userDetails.password}
+				<sf:label path="password">Password :</sf:label><sf:input type="password" path="password" disabled="true" placeholder="${userDetails.password}"/>
 					<br />
-				<sf:label path="email">Email:</sf:label>${userDetails.email}
+					<br />
+				<sf:label path="email">Email:</sf:label><sf:input path="email" disabled="true" placeholder="${userDetails.email}"/>
 					<br />
 				<br />
-				<sf:label path="mobile">Mobile #:</sf:label>${userDetails.mobile}
+				<sf:label path="mobile">Mobile #:</sf:label><sf:input path="mobile" disabled="true" placeholder="${userDetails.mobile}"/>
 				<br />
 				<br />
-				<sf:label path="address">Address :</sf:label>${userDetails.address}
+				<sf:label path="address">Address :</sf:label><sf:input path="address" disabled="true" placeholder="${userDetails.address}"/>
 					<br />
 				<br />
 				<input name="_eventId_edit" type="submit" value="Edit" />

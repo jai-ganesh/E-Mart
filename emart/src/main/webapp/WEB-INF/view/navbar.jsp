@@ -21,7 +21,7 @@ li {
 
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
 	width: 70%;
-	height:50%;
+	height: 50%;
 	margin: auto;
 }
 </style>
@@ -38,11 +38,11 @@ li {
 			<li><a href="<c:url value="/Vegetables"/>">Vegetables</a></li>
 			<li><a href="<c:url value="/Contact"/>">Contact Us</a></li>
 			<li><a href="<c:url value="/Login"/>">Login</a></li>
-			
+
 		</ul>
 	</b></nav>
 
 
-	
+
 </body>
 </html>
