@@ -19,19 +19,20 @@
 <title>Login</title>
 </head>
 <body>
+<c:url var="aaction" value="/users"></c:url>
 	<form:form action="isValidUser" method="post">
-
 		<h1>Login</h1>
 		<p class="col-xs-4">
 			<label for="username">USERNAME:</label> <input type="text"
-				class="form-control" name="name" required=""> <label
+				class="form-control" name="name" required=""><label
 				for="password">PASSWORD:</label> <input type="password"
 				class="form-control" name="password" required=""> <br>
 			<button type="submit" class="btn btn-success">Login</button>
 			<button type="reset" class="btn btn-success">Clear</button>
-			<br> <br> <a href="<c:url value="memberShip.obj"/>"
+			<br> <br> <a href="<c:url value="/register"/>"
 				type="button" class="btn btn-link">Register Here</a>
 		</p>
+		
 	</form:form>
 	<br />
 	<br />

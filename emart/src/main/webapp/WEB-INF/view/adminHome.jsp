@@ -26,25 +26,27 @@ td {
 </head>
 <body>
 	<div align="center">
-		<h2>Welcome Admin</h2>
-		<br> <br>
 		<table>
-			<tr>
-				<td><a href="categories"> Categories</a></td>
-			</tr>
-			<tr></tr>
-			<tr>
-				<td><a href="suppliers"> Suppliers</a></td>
+		<tr>
+		<h2>Welcome Admin</h2>
+		<br>
+		<td><img src="<c:url value="/resources/welcome.jpg"/>"
+						style="width: 1330px; height: 330px;">
 				</td>
-			</tr>
-			<tr></tr>
-			<tr>
-				<td><a href="products"> Products</a></td>
+		</tr>
+			<tr align="center">
+				<td> <a href="categories" class="btn btn-info" role="button">Categories </a></td>
+				</tr>
+				<br>
+				<tr align="center">
+				<td><a href="suppliers" class="btn btn-info" role="button">Suppliers </a></td>
+					</tr>
+					<br>
+					<tr align="center">
+				<td><a href="products" class="btn btn-info" role="button">  Products</a></td>
 
 			</tr>
 		</table>
-
-
 		</h2>
 	</div>
 	<br />

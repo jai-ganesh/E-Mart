@@ -73,7 +73,7 @@ public class ProductController {
 	}
 
 	@RequestMapping("product/remove/{id}")
-	public String removeProduct(@PathVariable("id") String id, ModelMap model) throws Exception {
+	public String removeProduct(@PathVariable("id") int id, ModelMap model) throws Exception {
 
 		try {
 			productDAO.delete(id);
@@ -87,7 +87,7 @@ public class ProductController {
 	}
 
 	@RequestMapping("product/edit/{id}")
-	public String editProduct(@PathVariable("id") String id, Model model) {
+	public String editProduct(@PathVariable("id") int id, Model model) {
 		System.out.println("editProduct");
 		model.addAttribute("product", this.productDAO.get(id));
 		model.addAttribute("listProducts", this.productDAO.list());
@@ -98,12 +98,12 @@ public class ProductController {
 	@RequestMapping("productinfo")
     public String get1(HttpServletRequest req,Model model){
 		String id=req.getParameter("id");
-		Product p=productDAO.get(id);
+		int id1= Integer.parseInt(id);
+		Product p=productDAO.get(id1);
 		Gson gson=new Gson();
 		String produ=gson.toJson(p);
 		model.addAttribute("productinfo",produ);
-		System.out.println(produ);
-		return "productinfo";
+			return "productinfo";
         }
 
 		

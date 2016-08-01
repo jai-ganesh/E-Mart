@@ -23,7 +23,8 @@ li {
 <title>Register</title>
 </head>
 <body>
-	<form:form action="/" method="post">
+<c:url var="aaction" value="/Home"></c:url>
+	<form:form action="${aaction}" method="post">
 		<div class="col-xs-4">
 			<label for="username">User Name</label> <input type="text"
 				class="form-control" name="username" pattern="[a-zA-Z]{3,}"
@@ -34,7 +35,7 @@ li {
 				pattern="[a-zA-Z]{5,}" title="Minimum 4 letters" required="">
 			<label for="text">Contact No.</label> <input type="text"
 				class="form-control" name="number" pattern="[789][0-9]{9}"
-				title="Enter 10 Numbers" required=""> <label for="address">Address
+				title="Enter Numbers Starts with 7/8/9" required=""> <label for="address">Address
 				Door no/Street:</label> <input type="text" class="form-control input"
 				name="address" required=""> <label for="city">City:</label>
 			<input type="text" class="form-control input" name="city"

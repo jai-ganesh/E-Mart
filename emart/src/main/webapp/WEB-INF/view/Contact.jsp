@@ -26,7 +26,6 @@ li {
 </head>
 <body>
 
-	</div>
 	<br>
 	<br>
 	<br>

@@ -1,6 +1,7 @@
 package com.niit.emart.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,11 +15,17 @@ public class UserController {
 	@Autowired
 	UserDAO userDAO;
 @RequestMapping("/")
-public String gotoadminhome()
+public String gotoadmin()
 {
 return "Login";
-}	    
-    @RequestMapping("/isValidUser")
+}
+@RequestMapping("/adminHome")
+public String gotoadminhome()
+{
+return "adminHome";
+}
+
+   @RequestMapping("/isValidUser")
 	public ModelAndView isValidUser(@RequestParam(value = "name") String name,
 			@RequestParam(value = "password") String password) {
 		System.out.println("in controller");
@@ -79,5 +86,26 @@ return "Login";
 	{
 	return "Upload";
 	}
+	@RequestMapping("/users")
+	public String ad(@RequestParam(value="error",required=false)String error,Authentication auth)
+	{
+		System.out.println(auth);
+		System.out.println(error);
+		if(error!=null)
+		{
+			return "Home";
+		}
+		else
+		{
+			return "Login";
+		}
+		}
+	@RequestMapping("/cart")
+	public String checkout(){
+		
+		return "redirect:/cart?cart";
+		
+	}
 
+		
 }

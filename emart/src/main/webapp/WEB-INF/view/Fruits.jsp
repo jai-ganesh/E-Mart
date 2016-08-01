@@ -27,13 +27,13 @@ li {
 			<tr>
 				<td></td>
 
-				<td><a href="productinfo?id=,PRO001" method="get"><img
+				<td><a href="productinfo?id=1" method="get"><img
 						src="<c:url value="/resources/apple.jpg"/>" alt="Cinque Terre"
 						title="Apple" width="100" height="100" value="1"></a>
 					<form>
 
 						<div class="panel panel-default">
-							<div class="panel-heading">&#8377; 35/-</div>
+							<div class="panel-heading">&#8377; 75/-</div>
 							<div class="panel-body" style="max-height: 10;">
 
 								<div class="col-xs-3">
@@ -44,13 +44,13 @@ li {
 								</div>
 					</form></td>
 				<td></td>
-				<td><a href="productinfo?id=,PRO002" method="get"><img
+				<td><a href="productinfo?id=2" method="get"><img
 						src="<c:url value="/resources/orange.jpg"/>" class="img-rounded"
 						alt="Cinque Terre" title="Orange" width="100" height="100"></a>
 					<form>
 
 						<div class="panel panel-default">
-							<div class="panel-heading">&#8377; 25/-</div>
+							<div class="panel-heading">&#8377; 55/-</div>
 							<div class="panel-body" style="max-height: 10;">
 								<div class="col-xs-3">
 									<label>Orange</label><br> <input type="text"

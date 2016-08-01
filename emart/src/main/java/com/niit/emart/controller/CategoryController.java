@@ -43,7 +43,7 @@ public class CategoryController {
 	}
 
 	@RequestMapping("category/remove/{id}")
-	public String deleteCategory(@PathVariable("id") String id, ModelMap model) throws Exception {
+	public String deleteCategory(@PathVariable("id") int id, ModelMap model) throws Exception {
 
 		try {
 			categoryDAO.delete(id);
@@ -56,7 +56,7 @@ public class CategoryController {
 	}
 
 	@RequestMapping("category/edit/{id}")
-	public String editCategory(@PathVariable("id") String id, Model model) {
+	public String editCategory(@PathVariable("id") int id, Model model) {
 		System.out.println("editCategory");
 		model.addAttribute("category", this.categoryDAO.get(id));
 		model.addAttribute("listCategorys", this.categoryDAO.list());

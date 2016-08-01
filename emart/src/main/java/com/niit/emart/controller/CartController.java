@@ -16,11 +16,8 @@ import com.niit.emart.model.Cart;
 import com.niit.emart.model.Category;
 import com.niit.emart.model.Product;
 
-
-
 @Controller
 public class CartController {
-	
 	
 	@Autowired(required=true)
 	private CartDAO cartDAO;
@@ -54,7 +51,7 @@ public class CartController {
 		
 	//For add and update cart both
 	@RequestMapping(value= "/cart/add/{id}", method = RequestMethod.GET)
-	public String addToCart(@PathVariable("id") String id){
+	public String addToCart(@PathVariable("id") int id){
 		
 	
 	 Product product =	 productDAO.get(id);
@@ -63,27 +60,26 @@ public class CartController {
 	 cart.setProductName(product.getName());
 	 cart.setQuantity(1);
 	 cart.setUserID("admin");
-	 cart.setStatus('N');
-		cartDAO.saveOrUpdate(cart);
+	 cartDAO.saveOrUpdate(cart);
 		//return "redirect:/views/home.jsp";
 		return "redirect:/onLoad";
-		
-	}
-	
+		}
 	@RequestMapping("cart/remove/{id}")
     public String removeCart(@PathVariable("id") String id,ModelMap model) throws Exception{
-		
-       try {
+	       try {
 		cartDAO.delete(id);
 		model.addAttribute("message","Successfully removed");
 	} catch (Exception e) {
 		model.addAttribute("message",e.getMessage());
 		e.printStackTrace();
 	}
-       //redirectAttrs.addFlashAttribute(arg0, arg1)
+       //redirectAttrs.addFlashAttribute(arg0,arg1)
         return "redirect:/Cart";
     }
- 
+
+	
+	
+	
     @RequestMapping("cart/edit/{id}")
     public String editCart(@PathVariable("id") String id, Model model){
     	System.out.println("editCart");

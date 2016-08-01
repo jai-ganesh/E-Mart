@@ -22,13 +22,13 @@
 <script>
 var val=${productinfo};
 	var app = angular.module("myApp", []);
-	app.controller("myCtrl", function($scope) {
+	app.controller("myCtrl", function($scope){
 		$scope.list = val;
-		
-	});
+		});
 </script>
 <table>
 <tr><td width="250px"><div ng-app="myApp" ng-controller="myCtrl">
+
 	<img src="C:\Users\Home\Downloads\img\{{list.name}}.jpg" height="200px" width="200px">
 	<h1>{{list.name}}</h1>   
 	    <h4>&#8377;{{list.price}}/-</h4>
@@ -38,11 +38,12 @@ var val=${productinfo};
  </td><td width="250px"></td>
  <td width="250px">
  <div class="col-xs-4">
-		<input type="text" class="form-control" name="kgs" pattern="[0-9]{1,2}" placeholder="kgs"><br>
-		<button type="button" class="btn btn-primary">Add to Cart</button></div>
+		<input type="text" class="form-control" name="kgs" pattern="[0-9]{1,2}" placeholder="kgs" required=""><br>
+		<div></div><a href="cart?cart">		
+		<button type="button" class="btn btn-primary">Add to Cart</button></a></div></div>
  </td></tr> </table>   
 <br>
 <br>
- <%@ include file="Footer.jsp" %>
+<%@ include file="Footer.jsp" %>
 </body>
 </html>

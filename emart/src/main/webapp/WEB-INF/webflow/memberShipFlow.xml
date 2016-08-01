@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                        http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+	<!-- Executed when webFlow is triggered -->
+
+<var name="cartdetails" class="com.niit.emart.model.Cartdetails"/>	
+
+	<view-state id="cart" view="addtocart.jsp">
+		<transition on="goToshippingdetails" to="shippingAddDetail" />
+	</view-state>
+
+	<view-state id="shippingAddDetail" view="shippingdetails.jsp"
+		model="cartdetails">
+		<transition on="shippingAddProcessCompleted" to="confirmation" />
+			</view-state>
+		
+<view-state id="confirmation" view="confirmdetails.jsp">
+<transition on="shippingProcessCompleted" to="welcome" />
+<transition on="edit" to="shippingAddDetail" />
+</view-state>
+<end-state id="welcome" view="order.jsp" />
+
+	
+	
+
+	
+</flow>

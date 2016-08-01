@@ -26,10 +26,11 @@ ul {
 	background-color: #333;
 }
 
-li {
-	float: left;
+.center {
+     float: none;
+     margin-left:10;
+     margin-right: auto;
 }
-
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
 	width: 70%;
 	margin: auto;
@@ -37,57 +38,94 @@ li {
 </style>
 
 <body>
-	<div class="container">
-		<br>
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
-				<li data-target="#myCarousel" data-slide-to="3"></li>
-				<li data-target="#myCarousel" data-slide-to="4"></li>
-			</ol>
+	<table>
+		<tr>
 
-			<!-- Wrapper for slides -->
-			<div class="carousel-inner" role="listbox">
-				<div class="item active">
-					<img src="<c:url value="/resources/home1.jpg"/>"
-						style="width: 1350px; height: 330px;">
-				</div>
+			<div class="container">
+				<br>
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
+						<li data-target="#myCarousel" data-slide-to="3"></li>
+						<li data-target="#myCarousel" data-slide-to="4"></li>
+					</ol>
 
-				<div class="item">
-					<img src="<c:url value="/resources/home2.jpg"/>"
-						style="width: 1350px; height: 330px;">
-				</div>
-				<div class="item">
-					<img src="<c:url value="/resources/home3.jpg"/>"
-						style="width: 1350px; height: 330px;">
-				</div>
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner" role="listbox">
+						<div class="item active">
+							<img src="<c:url value="/resources/home1.jpg"/>"
+								style="width: 1350px; height: 330px;">
+						</div>
 
-				<div class="item">
-					<img src="<c:url value="/resources/home4.jpg"/>"
-						style="width: 1350px; height: 330px;">
-				</div>
+						<div class="item">
+							<img src="<c:url value="/resources/home2.jpg"/>"
+								style="width: 1350px; height: 330px;">
+						</div>
+						<div class="item">
+							<img src="<c:url value="/resources/home3.jpg"/>"
+								style="width: 1350px; height: 330px;">
+						</div>
 
-				<div class="item">
-					<img src="<c:url value="/resources/home5.jpg"/>"
-						style="width: 1350px; height: 330px;">
+						<div class="item">
+							<img src="<c:url value="/resources/home4.jpg"/>"
+								style="width: 1350px; height: 330px;">
+						</div>
+
+						<div class="item">
+							<img src="<c:url value="/resources/home5.jpg"/>"
+								style="width: 1350px; height: 330px;">
+						</div>
+					</div>
+					<!-- Left and right controls -->
+					<a class="left carousel-control" href="#myCarousel" role="button"
+						data-slide="prev"> <span
+						class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a> <a class="right carousel-control" href="#myCarousel" role="button"
+						data-slide="next"> <span
+						class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
 				</div>
 			</div>
+		</tr>
+		<tr>
 
-			<!-- Left and right controls -->
-			<a class="left carousel-control" href="#myCarousel" role="button"
-				data-slide="prev"> <span
-				class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a> <a class="right carousel-control" href="#myCarousel" role="button"
-				data-slide="next"> <span
-				class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
-		</div>
-	</div>
-<%@include file="Footer.jsp"%>
+			<td><center>
+
+					<div>&nbsp;&nbsp;
+					</div><div class="panel panel-default">
+						<div class="panel-heading">New Arrivals</div>
+						<div class="panel-body" style="max-height: 10;">
+						<img src="<c:url value="/resources/gift.jpg"/>">&nbsp;&nbsp;&nbsp;&nbsp;
+						<img src="<c:url value="/resources/weight.jpg"/>">&nbsp;&nbsp;&nbsp;&nbsp;
+						<img src="<c:url value="/resources/diabetics.jpg"/>">&nbsp;&nbsp;&nbsp;&nbsp;
+						<img src="<c:url value="/resources/r.jpg"/>">&nbsp;&nbsp;&nbsp;&nbsp;
+						<img src="<c:url value="/resources/l.jpg"/>">
+						</div></div>
+				</center></td>
+			<td></td>
+			
+		</tr>
+		<tr>
+			<td>
+				<center>
+					<img src="<c:url value="/resources/b.png"/>"
+						style="width: 450px; height: 70px;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				
+			<img src="<c:url value="/resources/h.png"/>"
+						style="width: 450px; height: 70px;">
+						</center>
+			</td>
+		</tr>
+	</table>
+
+<br>
+<br>
+<br>
+	<%@include file="Footer.jsp"%>
 </body>
 </html>

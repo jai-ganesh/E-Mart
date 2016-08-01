@@ -43,7 +43,7 @@ public class SupplierController {
 	}
 	
 	@RequestMapping("supplier/remove/{id}")
-    public String removeSupplier(@PathVariable("id") String id,ModelMap model) throws Exception{
+    public String removeSupplier(@PathVariable("id") int id,ModelMap model) throws Exception{
 		
        try {
 		supplierDAO.delete(id);
@@ -57,7 +57,7 @@ public class SupplierController {
     }
  
     @RequestMapping("supplier/edit/{id}")
-    public String editSupplier(@PathVariable("id") String id, Model model){
+    public String editSupplier(@PathVariable("id") int id, Model model){
     	System.out.println("editSupplier");
         model.addAttribute("supplier", this.supplierDAO.get(id));
         model.addAttribute("listSuppliers", this.supplierDAO.list());

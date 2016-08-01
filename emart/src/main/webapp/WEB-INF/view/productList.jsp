@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@include file="navbar.jsp"%>
+<%@include file="navbar1.jsp"%>
 <%@ page isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
@@ -65,7 +65,7 @@ table.imagetable td {
 						</form:label></td>
 					<c:choose>
 						<c:when test="${!empty product.id}">
-							<td><form:input path="id" disabled="true" readonly="true" />
+							<td><form:input path="id" disabled="true" readonly="true"/>
 							</td>
 						</c:when>
 						<c:otherwise>
