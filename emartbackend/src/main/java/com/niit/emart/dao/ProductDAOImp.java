@@ -41,14 +41,14 @@ public class ProductDAOImp implements ProductDAO {
 	}
 
 	@Transactional
-	public void delete(String id) {
+	public void delete(int id) {
 		Product ProductToDelete = new Product();
 		ProductToDelete.setId(id);
 		sessionFactory.getCurrentSession().delete(ProductToDelete);
 	}
 
 	@Transactional
-	public Product get(String id) {
+	public Product get(int id) {
 		String hql = "from Product where id='" + id+"'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
@@ -63,7 +63,7 @@ public class ProductDAOImp implements ProductDAO {
 	}
 
 	@Transactional
-	public Product get1(String id) {
+	public Product get1(int id) {
 		String hql = "from Product where id='" + id+"'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
@@ -76,6 +76,8 @@ public class ProductDAOImp implements ProductDAO {
 		
 		return null;
 	}
+
+	
 
 
 

@@ -2,6 +2,8 @@ package com.niit.emart.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
@@ -15,17 +17,18 @@ import org.springframework.stereotype.Component;
 public class Supplier {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="ID")
-	private String id;
+	private int id;
 	@Size(min = 3, max = 15,message = "Enter Minimum 3 characters")
 	private String name;
 	@Size(min = 5, max = 25,message = "Enter Minimum 5 characters")
 	private String address;
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

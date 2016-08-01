@@ -10,13 +10,13 @@ public interface SupplierDAO {
 
 	public List<Supplier> list();
 
-	public Supplier get(String id);
+	public Supplier get(int id);
 	
 	public Supplier getByName(String name);
 
 	public void saveOrUpdate(Supplier supplier);
 
-	public String delete(String id);
+	public String delete(int id);
 
 
 }

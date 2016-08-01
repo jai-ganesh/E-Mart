@@ -14,15 +14,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class Cart {
 	
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	@Id 
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	@Transient
 	private int total;
 	private String productName;
 	private int price;
 	private int quantity;
-	private char status;
-	public int getTotal() {
+		public int getTotal() {
 		return total;
 	}
 	public void setTotal(int total) {
@@ -60,12 +60,5 @@ public class Cart {
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	public char getStatus() {
-		return status;
-	}
-	public void setStatus(char status) {
-		this.status = status;
-	}
-
 
 }

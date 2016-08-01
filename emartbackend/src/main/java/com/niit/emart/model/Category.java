@@ -2,6 +2,8 @@ package com.niit.emart.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
@@ -12,20 +14,20 @@ import org.hibernate.validator.constraints.NotBlank;
 @Table(name="CATEGORY")
 public class Category {
 
-//@NotBlank(message = "The Id must not be null")
 	
-private String id;
+private int id;
 @Size(min = 3, max = 15,message = "Enter Minimum 3 characters")
 private String name;
 @Size(min = 3, max = 20,message = "Enter Minimum 3 characters")
 private String description;
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "ID")
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {

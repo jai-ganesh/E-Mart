@@ -2,6 +2,8 @@ package com.niit.emart.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -26,7 +28,8 @@ public class Product {
 	}
 
 	@Id
-		private String  id;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+		private int  id;
 		@Size(min = 3, max = 15,message = "Name must Minimum 3 characters")
 	private String name;
 		@Size(min = 5, max = 15,message = "Description must have Minimum 5 characters")
@@ -34,22 +37,22 @@ public class Product {
 	@Min(value=50,message="Enter Above 50")
 	private int price;
 		
-	public String getCategory_id() {
+	public int getCategory_id() {
 		return category_id;
 	}
-	public void setCategory_id(String category_id) {
+	public void setCategory_id(int category_id) {
 		this.category_id = category_id;
 	}
 	
-	public String getSupplier_id() {
+	public int getSupplier_id() {
 		return supplier_id;
 	}
-	public void setSupplier_id(String supplier_id) {
+	public void setSupplier_id(int supplier_id) {
 		this.supplier_id = supplier_id;
 	}
 
-	private String category_id;
-	private String supplier_id;
+	private int category_id;
+	private int supplier_id;
 	
 	@ManyToOne
     @JoinColumn(name="category_id", nullable = false, updatable = false, insertable = false)
@@ -65,10 +68,10 @@ public class Product {
 	@ManyToOne
     @JoinColumn(name="supplier_id",nullable = false, updatable = false, insertable = false)
 	private Supplier supplier;
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -89,8 +92,6 @@ public class Product {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	
-	
 	
 
 }
